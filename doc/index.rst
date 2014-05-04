@@ -66,7 +66,7 @@ for what is available so far.
 
 .. _Nicolas P. Rougier: http://www.loria.fr/~rougier/
 .. _restructured text: http://docutils.sourceforge.net/rst.html
-.. _source: about.rst
+.. _source: doc/index.rst
 
 
 
