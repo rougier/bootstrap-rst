@@ -1,0 +1,1132 @@
+.. default-role:: code
+.. role:: small
+
+.. role:: text-muted
+.. role:: text-primary
+.. role:: text-success
+.. role:: text-info
+.. role:: text-warning
+.. role:: text-danger
+
+.. role:: bg-muted
+.. role:: bg-primary
+.. role:: bg-success
+.. role:: bg-info
+.. role:: bg-warning
+.. role:: bg-danger
+
+.. include:: glyphicons-defs.txt
+
+
+
+.. ----------------------------------------------------------------------------
+.. header::
+
+   .. container:: bs-docs-header
+
+      .. container:: container
+
+         :h1:`Bootstrap RST`
+
+         Overview of the project, its contents, and how to get started with a
+         simple template.
+.. ----------------------------------------------------------------------------
+
+.. ----------------------------------------------------------------------------
+.. footer::
+
+   .. container:: col-md-offset-3
+
+      Hello
+.. ----------------------------------------------------------------------------
+
+
+.. ----------------------------------------------------------------------------
+.. sidebar:: sidebar
+
+   .. contents:: content
+      :depth: 2
+.. ----------------------------------------------------------------------------
+
+
+
+
+.. alert:: info
+   :dismissable:
+
+   Here is an alert
+
+
+.. callout:: danger
+
+   :h4:`title`
+   Here is an alert
+
+
+.. alert:: success
+
+   **Well done!** You successfully read this important alert message.
+
+.. alert:: info
+
+   **Heads up!** This alert needs your attention, but it's not super important.
+
+.. alert:: warning
+
+   **Warning!** Better check yourself, you're not looking too good.
+
+.. alert:: danger
+
+   **Oh snap!** Change a few things up and try submitting again.
+
+
+
+Overview
+===============================================================================
+
+.. lead::
+
+   Get the lowdown on the key pieces of Bootstrap's infrastructure, including
+   our approach to better, faster, stronger web development.
+
+
+
+HTML5 doctype
+-------------
+
+Bootstrap makes use of certain HTML elements and CSS properties that require
+the use of the HTML5 doctype. Include it at the beginning of all your projects.
+
+.. code:: html
+   :class: highlight
+
+   <!DOCTYPE html>
+   <html lang="en">
+   ...
+   </html>
+
+
+Mobile first
+-------------
+
+With Bootstrap 2, we added optional mobile friendly styles for key aspects of
+the framework. With Bootstrap 3, we've rewritten the project to be mobile
+friendly from the start. Instead of adding on optional mobile styles, they're
+baked right into the core. In fact, **Bootstrap is mobile first**. Mobile first
+styles can be found throughout the entire library instead of in separate files.
+
+To ensure proper rendering and touch zooming, **add the viewport meta tag** to
+your :code:`<head>`.
+
+.. code:: html
+   :class: highlight
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+You can disable zooming capabilities on mobile devices by adding
+:code:`user-scalable=no` to the viewport meta tag. This disables zooming,
+meaning users are only able to scroll, and results in your site feeling a bit
+more like a native application. Overall, we don't recommend this on every site,
+so use caution!
+
+.. code:: html
+   :class: highlight
+
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+Typography and links
+--------------------
+
+Bootstrap sets basic global display, typography, and link styles. Specifically,
+we:
+
+* Set :code:`background-color: #fff`; on the body
+* Use the :code:`@font-family-base`, :code:`@font-size-base`, and
+  :code:`@line-height-base` attributes as our typographic base
+* Set the global link color via :code:`@link-color` and apply link underlines
+  only on :hover
+
+These styles can be found within :code:`scaffolding.less`.
+
+
+Normalize.css
+-------------
+
+For improved cross-browser rendering, we use `Normalize.css
+<http://necolas.github.io/normalize.css/>`_, a project by `Nicolas Gallagher
+<https://twitter.com/necolas>`_ and `Jonathan Neal <https://twitter.com/jon_neal>`_.
+
+
+Containers
+----------
+
+Easily center a page's contents by wrapping its contents in a
+.container. Containers set width at various media query breakpoints to match
+our grid system.
+
+Note that, due to padding and fixed widths, containers are not nestable by
+default.
+
+.. code::
+   :class: highlight
+
+   .. container::
+
+      ...
+
+Grid system
+===============================================================================
+.. lead::
+
+   Bootstrap includes a responsive, mobile first fluid grid system that
+   appropriately scales up to 12 columns as the device or viewport size
+   increases. It includes predefined classes for easy layout options, as well
+   as powerful mixins for generating more semantic layouts.
+.. ----------------------------------------------------------------------------
+
+
+
+Introduction
+------------
+
+Grid systems are used for creating page layouts through a series of rows and
+columns that house your content. Here's how the Bootstrap grid system works:
+
+* Rows must be placed within a `.container` (fixed-width) or `.container-fluid`
+  (full-width) for proper alignment and padding.
+* Use rows to create horizontal groups of columns.
+* Content should be placed within columns, and only columns may be immediate children of rows.
+* Predefined grid classes like `.row` and `.col-xs-4` are available for quickly
+  making grid layouts. Less mixins can also be used for more semantic layouts.
+* Columns create gutters (gaps between column content) via padding. That
+  padding is offset in rows for the first and last column via negative margin
+  on `.row` s.
+* Grid columns are created by specifying the number of twelve available columns
+  you wish to span. For example, three equal columns would use three `.col-xs-4`.
+  Look to the examples for applying these principles to your code.
+
+Look to the examples for applying these principles to your code.
+
+Media queries
+-------------
+
+We use the following media queries in our Less files to create the key
+breakpoints in our grid system.
+
+.. code:: css
+   :class: highlight
+
+   /* Extra small devices (phones, less than 768px) */
+   /* No media query since this is the default in Bootstrap */
+
+   /* Small devices (tablets, 768px and up) */
+   @media (min-width: @screen-sm-min) { ... }
+
+   /* Medium devices (desktops, 992px and up) */
+   @media (min-width: @screen-md-min) { ... }
+
+   /* Large devices (large desktops, 1200px and up) */
+   @media (min-width: @screen-lg-min) { ... }
+
+We occasionally expand on these media queries to include a max-width to limit
+CSS to a narrower set of devices.
+
+.. code:: css
+   :class: highlight
+
+   @media (max-width: @screen-xs-max) { ... }
+   @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
+   @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
+   @media (min-width: @screen-lg-min) { ... }
+
+
+Grid options
+------------
+
+See how aspects of the Bootstrap grid system work across multiple devices with
+a handy table.
+
+.. table::
+   :class: table table-bordered table-striped
+
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+   |                     | Extra small devices | Small devices    | Medium devices    | Large devices      |
+   |                     | Phones (<768px)     | Tablets (≥768px) | Desktops (≥992px) | Desktops (≥1200px) |
+   +=====================+=====================+==================+===================+====================+
+   | **Grid Behavior**   | Horizontal at all   | Collapsed to start, horizontal above breakpoints          |
+   |                     | times               |                                                           |
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+   | **Container Width** | None (auto)         | 750px            | 970px             | 1170px             |
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+   | **Class Predix**    | `col-xs-`           | `col-sd-`        | `col-md-`         | `col-lg-`          |
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+   | **# Columns**       | 12                                                                              |
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+   | **Column Width**    | :text-muted:`Auto`  | 60px             | 78px              | 95px               |
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+   | **Gutter width**    | 30px (15px on each side of a column)                                            |
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+   | **Netsable**        | Yes                                                                             |
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+   | **Offsets**         | Yes                                                                             |
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+   | **Column Ordering** | Yes                                                                             |
+   +---------------------+---------------------+------------------+-------------------+--------------------+
+
+Grid classes apply to devices with screen widths greater than or equal to the
+breakpoint sizes, and override grid classes targeted at smaller
+devices. Therefore, applying any `.col-md-` class to an element will not only
+affect its styling on medium devices but also on large devices if a `.col-lg-`
+class is not present.
+
+
+Example: Stacked-to-horizontal
+------------------------------
+
+Using a single set of `.col-md-*` grid classes, you can create a basic grid
+system that starts out stacked on mobile devices and tablet devices (the extra
+small to small range) before becoming horizontal on desktop (medium)
+devices. Place grid columns in any `.row`.
+
+.. row::
+   :class: show-grid
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+   .. column::
+
+      .col-md-1
+
+.. row::
+   :class: show-grid
+
+   .. column::
+      :width: 8
+
+      .col-md-8
+
+   .. column::
+      :width: 4
+
+      .col-md-4
+
+.. row::
+   :class: show-grid
+
+   .. column::
+      :width: 4
+
+      .col-md-4
+
+   .. column::
+      :width: 4
+
+      .col-md-4
+
+   .. column::
+      :width: 4
+
+      .col-md-4
+
+
+.. row::
+   :class: show-grid
+
+   .. column::
+      :width: 6
+
+      .col-md-6
+
+   .. column::
+      :width: 6
+
+      .col-md-6
+
+
+Offsetting columns
+------------------
+
+Move columns to the right using `.col-md-offset-*` classes. These classes
+increase the left margin of a column by * columns. For example,
+`.col-md-offset-4` moves `.col-md-4` over four columns.
+
+
+.. row::
+   :class: show-grid
+
+   .. column::
+      :width: 4
+
+      .col-md-4
+
+   .. column::
+      :width: 4
+      :offset: 4
+
+      .col-md-4
+
+
+.. row::
+   :class: show-grid
+
+   .. column::
+      :width: 3
+      :offset: 3
+
+      .col-md-3
+
+   .. column::
+      :width: 3
+      :offset: 3
+
+      .col-md-3
+
+
+.. row::
+   :class: show-grid
+
+   .. column::
+      :width: 6
+      :offset: 3
+
+      .col-md-6
+
+
+Nesting columns
+---------------
+
+To nest your content with the default grid, add a new `.row` and set of
+`.col-md-*` columns within an existing `.col-md-*` column. Nested rows should
+include a set of columns that add up to 12 or less.
+
+.. row::
+   :class: show-grid
+
+   .. column::
+      :width: 9
+
+      Level 1: .col-md-9
+
+      .. row::
+         :class: show-grid
+
+         .. column::
+            :width: 6
+
+            Level 2: .col-md-6
+
+         .. column::
+            :width: 6
+
+            Level 2: .col-md-6
+
+
+Column ordering
+---------------
+
+Easily change the order of our built-in grid columns with .col-md-push-* and
+.col-md-pull-* modifier classes.
+
+
+.. row::
+   :class: show-grid
+
+   .. column::
+      :width: 9
+      :push: 3
+
+      .col-md-9 . col-push-3
+
+   .. column::
+      :width: 3
+      :pull: 9
+
+      .col-md-3 . col-pull-9
+
+.. code::
+   :class: highlight
+
+   .. column::
+      :width: 9
+      :push: 3
+
+      .col-md-9 . col-push-3
+
+   .. column::
+      :width: 3
+      :pull: 9
+
+      .col-md-3 . col-pull-9
+
+
+
+Typography
+===============================================================================
+
+Headings
+--------
+
+All HTML headings, :code:`<h1>` through :code:`<h6>`, are available. :code:`.h1`
+through :code:`.h6` classes are also available, for when you want to match the font
+styling of a heading but still want your text to be displayed inline.
+
+.. container:: bs-example
+
+   .. list-table::
+      :widths: 75 25
+      :class: table
+
+      * - :h1:`h1. Bootstrap heading`
+        - **Semibold 36 px**
+      * - :h2:`h2. Bootstrap heading`
+        - **Semibold 30 px**
+      * - :h3:`h3. Bootstrap heading`
+        - **Semibold 24 px**
+      * - :h4:`h4. Bootstrap heading`
+        - **Semibold 18 px**
+      * - :h5:`h5. Bootstrap heading`
+        - **Semibold 14 px**
+      * - :h6:`h6. Bootstrap heading`
+        - **Semibold 12 px**
+
+.. code::
+   :class: highlight
+
+   h1. Bootstrap heading
+   =====================
+
+   h2. Bootstrap heading
+   ---------------------
+
+   h3. Bootstrap heading
+   +++++++++++++++++++++
+
+   h4. Bootstrap heading
+   ~~~~~~~~~~~~~~~~~~~~~
+
+   h5. Bootstrap heading
+   *********************
+
+   h6. Bootstrap heading
+   ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+Create lighter, secondary text in any heading with a generic :code:`small` tag.
+
+
+.. container:: bs-example
+
+   .. list-table::
+      :widths: 100
+      :class: table
+
+      * - :h1:`h1. Bootstrap heading <small>Secondary text</small>`
+      * - :h2:`h2. Bootstrap heading <small>Secondary text</small>`
+      * - :h3:`h3. Bootstrap heading <small>Secondary text</small>`
+      * - :h4:`h4. Bootstrap heading <small>Secondary text</small>`
+      * - :h5:`h5. Bootstrap heading <small>Secondary text</small>`
+      * - :h6:`h6. Bootstrap heading <small>Secondary text</small>`
+
+.. code::
+   :class: highlight
+
+   h1. Bootstrap heading :small:`Secondary text`
+   =============================================
+
+   h2. Bootstrap heading :small:`Secondary text`
+   ---------------------------------------------
+
+   h3. Bootstrap heading :small:`Secondary text`
+   +++++++++++++++++++++++++++++++++++++++++++++
+
+   h4. Bootstrap heading :small:`Secondary text`
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   h5. Bootstrap heading :small:`Secondary text`
+   *********************************************
+
+   h6. Bootstrap heading :small:`Secondary text`
+   ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+
+
+Body copy
+---------
+
+Bootstrap's global default `font-size` is **14px**, with a line-height of
+**1.428**. This is applied to the `<body>` and all paragraphs. In addition,
+`<p>` (paragraphs) receive a bottom margin of half their computed line-height
+(10px by default).
+
+
+.. container:: bs-example
+
+   Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque
+   penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id
+   dolor id nibh ultricies vehicula.
+
+   Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+   ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis
+   mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
+   odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+
+   Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id
+   elit non mi porta gravida at eget metus. Duis mollis, est non commodo
+   luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+
+.. code::
+   :class: highlight
+
+   ...
+
+
+Lead body copy
+++++++++++++++
+
+Make a paragraph stand out by adding lead.
+
+
+.. container:: bs-example
+
+   .. lead::
+
+      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+      auctor. Duis mollis, est non commodo luctus.
+
+
+.. code::
+   :class: highlight
+
+   .. lead::
+
+      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+      auctor. Duis mollis, est non commodo luctus.
+
+
+Built with Less
++++++++++++++++
+
+The typographic scale is based on two Less variables in **variables.less**:
+`@font-size-base` and `@line-height-base`. The first is the base font-size used
+throughout and the second is the base line-height. We use those variables and
+some simple math to create the margins, paddings, and line-heights of all our
+type and more. Customize them and Bootstrap adapts.
+
+
+Emphasis
+--------
+Make use of HTML's default emphasis tags with lightweight styles.
+
+
+Small text
+++++++++++
+
+For de-emphasizing inline or blocks of text, use the `small` tag to set text at
+85% the size of the parent. Heading elements receive their own font-size for
+nested `small` elements.
+
+.. container:: bs-example
+
+   :small:`This line of text is meant to be treated as fine print.`
+
+
+.. code::
+   :class: highlight
+
+   :small:`This line of text is meant to be treated as fine print.`
+
+
+Bold
+++++
+
+For emphasizing a snippet of text with a heavier font-weight.
+
+.. container:: bs-example
+
+   The following snippet of text is **rendered as bold text**.
+
+.. code::
+   :class: highlight
+
+   The following snippet of text is **rendered as bold text**.
+
+
+Italics
++++++++
+
+For emphasizing a snippet of text with italics.
+
+.. container:: bs-example
+
+   The following snippet of text is *rendered as italicized text*.
+
+.. code::
+   :class: highlight
+
+   The following snippet of text is *rendered as italicized text*.
+
+
+.. admonition:: :h4:`Alternate elements`
+   :class: bs-callout bs-callout-info
+
+   Feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or
+   phrases without conveying additional importance while `<i>` is mostly for
+   voice, technical terms, etc.
+
+
+Alignment classes
++++++++++++++++++
+
+Easily realign text to components with text alignment classes.
+
+
+Lists
+-----
+
+Unordered
++++++++++
+
+A list of items in which the order does *not* explicitly matter.
+
+.. container:: bs-example
+
+   * Lorem ipsum dolor sit amet
+   * Consectetur adipiscing elit
+   * Integer molestie lorem at massa
+   * Facilisis in pretium nisl aliquet
+   * Nulla volutpat aliquam velit
+
+     * Phasellus iaculis neque
+     * Purus sodales ultricies
+     * Vestibulum laoreet porttitor sem
+     * Ac tristique libero volutpat at
+
+   * Faucibus porta lacus fringilla vel
+   * Aenean sit amet erat nunc
+   * Eget porttitor lorem
+
+.. code::
+   :class: highlight
+
+   * Lorem ipsum dolor sit amet
+   * Consectetur adipiscing elit
+     ...
+
+
+Ordered
++++++++
+
+A list of items in which the order *does* matter.
+
+.. container:: bs-example
+
+   1. Lorem ipsum dolor sit amet
+   #. Consectetur adipiscing elit
+   #. Integer molestie lorem at massa
+   #. Facilisis in pretium nisl aliquet
+   #. Nulla volutpat aliquam velit
+   #. Faucibus porta lacus fringilla vel
+   #. Aenean sit amet erat nunc
+   #. Eget porttitor lorem
+
+.. code::
+   :class: highlight
+
+   1. Lorem ipsum dolor sit amet
+   #. Consectetur adipiscing elit
+      ...
+
+Unstyled
+++++++++
+
+Remove the default `list-style` and left margin on list items (immediate children
+only). **This only applies to immediate children list items**, meaning you will
+need to add the class for any nested lists as well.
+
+.. container:: bs-example
+
+   * Lorem ipsum dolor sit amet
+   * Consectetur adipiscing elit
+   * Integer molestie lorem at massa
+   * Facilisis in pretium nisl aliquet
+   * Nulla volutpat aliquam velit
+
+     * Phasellus iaculis neque
+     * Purus sodales ultricies
+     * Vestibulum laoreet porttitor sem
+     * Ac tristique libero volutpat at
+
+   * Faucibus porta lacus fringilla vel
+   * Aenean sit amet erat nunc
+   * Eget porttitor lorem
+
+
+Button
+===============================================================================
+
+
+Options
+-------
+
+Use any of the available button classes to quickly create a styled button.
+
+.. container:: bs-example
+
+   .. button:: Default
+      :type: default
+
+   .. button:: Primary
+      :type: primary
+
+   .. button:: Success
+      :type: success
+
+   .. button:: Info
+      :type: info
+
+   .. button:: Warning
+      :type: warning
+
+   .. button:: Danger
+      :type: danger
+
+   .. button:: Link
+      :type: link
+
+.. code::
+   :class: highlight
+
+   .. button:: Default
+      :type: default
+
+   .. button:: Primary
+      :type: primary
+
+   .. button:: Success
+      :type: success
+
+   .. button:: Info
+      :type: info
+
+   .. button:: Warning
+      :type: warning
+
+   .. button:: Danger
+      :type: danger
+
+   .. button:: Link
+      :type: link
+
+
+Sizes
+-----
+
+Fancy larger or smaller buttons? Add :code:`large`, :code:`small`, or
+:code:`tiny` for additional sizes.
+
+.. container:: bs-example
+
+   .. button:: Large button
+      :type: primary
+      :size: large
+   .. button:: Large button
+      :size: large
+
+   |
+
+   .. button:: Default button
+      :type: primary
+   .. button:: Default button
+
+   |
+
+   .. button:: Small button
+      :type: primary
+      :size: small
+   .. button:: Small button
+      :size: small
+
+   |
+
+   .. button:: Tiny button
+      :type: primary
+      :size: tiny
+   .. button:: Tiny button
+      :size: tiny
+
+.. code::
+   :class: highlight
+
+   .. button:: Large button
+      :type: primary
+      :size: large
+
+   .. button:: Large button
+      :size: large
+
+   .. button:: Default button
+      :type: primary
+      :size: default
+
+   .. button:: Default button
+      :type: default
+      :size: default
+
+   .. button:: Small button
+      :type: primary
+      :size: small
+
+   .. button:: Small button
+      :size: small
+
+   .. button:: Tiny button
+      :type: primary
+      :size: tiny
+
+   .. button:: Tiny button
+      :size: tiny
+
+Create block level buttons—those that span the full width of a parent by adding
+:code:`block`.
+
+.. container:: bs-example
+
+   .. container:: well
+
+      .. button:: Block level button
+         :type: primary
+         :size: large
+         :block:
+
+      .. button:: Block level button
+         :type: default
+         :size: large
+         :block:
+
+.. code::
+   :class: highlight
+
+   .. button:: Block level button
+      :type: primary
+      :size: large
+      :block:
+
+   .. button:: Block level button
+      :type: default
+      :size: large
+      :block:
+
+
+Active state
+------------
+Buttons will appear pressed (with a darker background, darker border, and inset
+shadow) when :code:`active`.
+
+.. container:: bs-example
+
+   .. button:: Primary button
+      :type: primary
+      :size: large
+      :active:
+
+   .. button:: Button
+      :type: default
+      :size: large
+      :active:
+
+
+.. code::
+   :class: highlight
+
+   .. button:: Primary button
+      :type: primary
+      :size: large
+      :active:
+
+   .. button:: Button
+      :type: default
+      :size: large
+      :active:
+
+
+
+Disabled state
+--------------
+
+Make buttons look unclickable by fading them back 50% using the :code:`disabled`
+option.
+
+.. container:: bs-example
+
+   .. button:: Primary button
+      :type: primary
+      :size: large
+      :disabled:
+
+   .. button:: Button
+      :type: default
+      :size: large
+      :disabled:
+
+
+.. code::
+   :class: highlight
+
+   .. button:: Primary button
+      :type: primary
+      :size: large
+      :disabled:
+
+   .. button:: Button
+      :type: default
+      :size: large
+      :disabled:
+
+
+Helper classes
+===============================================================================
+
+Contextual colors
+-----------------
+Convey meaning through color with a handful of emphasis utility classes. These
+may also be applied to links and will darken on hover just like our default
+link styles.
+
+.. container:: bs-example
+
+   | :text-muted:`Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.`
+   | :text-primary:`Nullam id dolor id nibh ultricies vehicula ut id elit.`
+   | :text-success:`Duis mollis, est non commodo luctus, nisi erat porttitor ligula.`
+   | :text-info:`Maecenas sed diam eget risus varius blandit sit amet non magna.`
+   | :text-warning:`Etiam porta sem malesuada magna mollis euismod.`
+   | :text-danger:`Donec ullamcorper nulla non metus auctor fringilla.`
+
+.. code:: rst
+   :class: highlight
+
+   :text-muted:`Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.`
+   :text-primary:`Nullam id dolor id nibh ultricies vehicula ut id elit.`
+   :text-success:`Duis mollis, est non commodo luctus, nisi erat porttitor ligula.`
+   :text-info:`Maecenas sed diam eget risus varius blandit sit amet non magna.`
+   :text-warning:`Etiam porta sem malesuada magna mollis euismod.`
+   :text-danger:`Donec ullamcorper nulla non metus auctor fringilla.`
+
+
+
+Contextual background
+---------------------
+
+Similar to the contextual text color classes, easily set the background of an
+element to any contextual class. Anchor components will darken on hover, just
+like the text classes.
+
+
+.. container:: bs-example bs-example-bg-classes
+
+   .. container:: bg-primary
+
+      Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+   .. container:: bg-success
+
+      Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+   .. container:: bg-info
+
+      Maecenas sed diam eget risus varius blandit sit amet non magna.
+
+   .. container:: bg-warning
+
+      Etiam porta sem malesuada magna mollis euismod.
+
+   .. container:: bg-danger
+
+      Donec ullamcorper nulla non metus auctor fringilla.
+
+.. code:: rst
+   :class: highlight
+
+   :bg-primary:`Nullam id dolor id nibh ultricies vehicula ut id elit.`
+   :bg-success:`Duis mollis, est non commodo luctus, nisi erat porttitor ligula.`
+   :bg-info:`Maecenas sed diam eget risus varius blandit sit amet non magna.`
+   :bg-warning:`Etiam porta sem malesuada magna mollis euismod.`
+   :bg-danger:`Donec ullamcorper nulla non metus auctor fringilla.`
+
+
+Glyphicons
+==========
+
+Available glyphs
+----------------
+
+Includes 200 glyphs in font format from the Glyphicon Halflings
+set. `Glyphicons <http://glyphicons.com>`_ Halflings are normally not available
+for free, but their creator has made them available for Bootstrap free of
+cost. As a thank you, we only ask that you include a link back to `Glyphicons
+<http://glyphicons.com>`_ whenever possible.
+
+
+.. include:: glyphicons-list.txt
+
+How to use
+----------
+
+For performance reasons, all icons require a base class and individual icon
+class. To use, place the following code just about anywhere. Be sure to leave a
+space between the icon and text for proper padding.
+
+.. callout:: danger
+
+   :h4:`Don't mix with other`
+   Icon classes cannot be directly combined with other components. They should
+   not be used along with other classes on the same element. Instead, add a
+   nested `<span>` and apply the icon classes to the `<span>`.
+
+.. container:: bs-example
+
+   |search| |star| |tag|
+
+.. code::
+   :class: highlight
+
+   |search| |star| |tag|
