@@ -12,8 +12,8 @@ See demo at: http://rougier.github.io/bootstrap-rst/
 
 **Nicolas P. Rougier**
 
-http://www.loria.fr/~rougier
-http://github.com/rougier
+- http://www.loria.fr/~rougier
+- http://github.com/rougier
 
 ## Copyright and license
 
