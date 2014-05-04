@@ -11,10 +11,10 @@
 
       .. container:: container
 
-         :h1:`Components`
+         :h1:`Bootstrap RST`
 
-         Over a dozen reusable components built to provide iconography,
-         dropdowns, input groups, navigation, alerts, and much more.
+         Overview of the project, its contents, and how to get started with a
+         simple template.
 .. ----------------------------------------------------------------------------
 
 .. ----------------------------------------------------------------------------
@@ -26,7 +26,7 @@
 
    Code licensed under MIT, documentation under CC BY 3.0.
 
-   `Get page source <doc/components.rst>`_
+   `Get page source <doc/CSS.rst>`_
 
    .. list:: bs-docs-footer-links muted
 
@@ -41,6 +41,7 @@
       * `Issues <https://github.com/rougier/bootstrap-rst/issues>`_
       * ·
       * `Releases <https://github.com/rougier/bootstrap-rst/releases>`_
+
 .. ----------------------------------------------------------------------------
 
 
@@ -51,8 +52,10 @@
       :depth: 2
 .. ----------------------------------------------------------------------------
 
-
-.. include:: components-glyphicons.txt
-.. include:: components-labels.txt
-.. include:: components-badges.txt
-.. include:: components-alerts.txt
+.. include:: CSS-overview.txt
+.. include:: CSS-grid-system.txt
+.. include:: CSS-typography.txt
+.. include:: CSS-code.txt
+.. include:: CSS-tables.txt
+.. include:: CSS-buttons.txt
+.. include:: CSS-helpers.txt

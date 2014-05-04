@@ -1,20 +1,21 @@
-.. ----------------------------------------------------------------------------
 .. default-role:: code
-.. include:: bootstrap-roles.txt
-.. include:: bootstrap-glyphs.txt
-.. ----------------------------------------------------------------------------
+
+.. role:: text-muted
+.. role:: text-primary
+.. role:: text-success
+.. role:: text-info
+.. role:: text-warning
+.. role:: text-danger
+
 
 .. ----------------------------------------------------------------------------
-.. header::
+.. header:: bs-docs-header
 
-   .. container:: bs-docs-header
+   .. container:: container
 
-      .. container:: container
+      :h1:`Bootstrap RST`
 
-         :h1:`Bootstrap RST`
-
-         Overview of the project, its contents, and how to get started with a
-         simple template.
+      An overview of Bootstrap RST, basic templates and examples, and more.
 .. ----------------------------------------------------------------------------
 
 .. ----------------------------------------------------------------------------
@@ -26,22 +27,21 @@
 
    Code licensed under MIT, documentation under CC BY 3.0.
 
-   `Get page source <index.rst>`_
+   `Get page source <doc/index.rst>`_
 
    .. list:: bs-docs-footer-links muted
 
-      * GitHub
+      * `GitHub <https://github.com/rougier/bootstrap-rst>`_
       * ·
-      * Examples
+      * `Examples <examples.html>`_
       * ·
-      * Documentation
+      * `Documentation <about.html>`_
       * ·
       * `About <about.html>`_
       * ·
-      * Issues
+      * `Issues <https://github.com/rougier/bootstrap-rst/issues>`_
       * ·
-      * Releases
-
+      * `Releases <https://github.com/rougier/bootstrap-rst/releases>`_
 .. ----------------------------------------------------------------------------
 
 
@@ -52,12 +52,326 @@
       :depth: 2
 .. ----------------------------------------------------------------------------
 
+Bootstrap RST
+===============================================================================
+.. lead:: Bootstrap RST provides easy acces to bootstrap using the restructured
+          text markup language.
+
+Bootstrap RST offers an easy access to the `bootstrap
+<http://getbootstrap.com/>`_ framework using the `restructured text`_ markup
+language. Bootstrap RST provides a set of new directives and roles (row,
+column, button, list, etc.)  that allow seamless integration of the bootstrap
+framework. Have a look at the `source`_ of this page for example and see below
+for what is available so far.
+
+.. _Nicolas P. Rougier: http://www.loria.fr/~rougier/
+.. _restructured text: http://docutils.sourceforge.net/rst.html
+.. _source: about.rst
 
 
-.. include:: index-overview.txt
-.. include:: index-grid-system.txt
-.. include:: index-typography.txt
-.. include:: index-code.txt
-.. include:: index-tables.txt
-.. include:: index-buttons.txt
-.. include:: index-helpers.txt
+
+Work in Progress
+===============================================================================
+.. lead:: Bootstrap RST is work in progress. We report here what has been done
+          so far, what needs to be done and what is not relevant.
+.. ----------------------------------------------------------------------------
+
+
+CSS
+---
+
+Global CSS settings, fundamental HTML elements styled and enhanced with
+extensible classes, and an advanced grid system.
+
+
+.. row::
+
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Grid system`
+
+      .. progress:: 100%
+         :type: success
+      See `grids <CSS.html#grid-system>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Typography`
+
+      .. progress:: 100%
+         :type: success
+      See `typography <CSS.html#typography>`_
+
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Code`
+
+      .. progress:: 100%
+         :type: success
+      See `code <CSS.html#code>`_
+
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Tables`
+
+      .. progress:: 90%
+         :type: warning
+
+      See `tables <CSS.html#tables>`_
+   .. -------------------------------------------------------------------------
+
+
+.. row::
+
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Forms`
+      :text-muted:`N/A`
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Buttons`
+
+      .. progress:: 100%
+         :type: success
+      See `buttons <CSS.html#buttons>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Images`
+
+      .. progress:: 75%
+         :type: warning
+      See `images <CSS.html#images>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Helper classes`
+
+      .. progress:: 50%
+         :type: warning
+
+      See `helper classes <CSS.html#helper-classes>`_
+   .. -------------------------------------------------------------------------
+
+
+
+Components
+----------
+
+Over a dozen reusable components built to provide iconography, dropdowns, input
+groups, navigation, alerts, and much more.
+
+
+.. row::
+
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Glyphicons`
+
+      .. progress:: 100%
+         :type: success
+      See `glyphicons <components.html#glyphicons>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Dropdowns`
+
+      .. progress:: 100%
+         :type: success
+      See `dropdowns <components.html#dropdowns>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Button groups`
+
+      .. progress:: 100%
+         :type: success
+      See `button groups <components.html#button-groups>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Glyphicons`
+
+      .. progress:: 100%
+         :type: success
+      See `button dropdowns <components.html#button-dropdowns>`_
+   .. -------------------------------------------------------------------------
+
+
+.. row::
+
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Input groups`
+      :text-muted:`N/A`
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Navs`
+
+      .. progress:: 25%
+         :type: danger
+      See `navs <components.html#navs>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Navbar`
+
+      .. progress:: 25%
+         :type: danger
+      See `navbar <components.html#navbar>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Breadcrumbs`
+
+      .. progress:: 25%
+         :type: danger
+      See `breadcrumbs <components.html#breadcrumbs>`_
+   .. -------------------------------------------------------------------------
+
+
+.. row::
+
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Pagination`
+
+      .. progress:: 25%
+         :type: danger
+      See `pagination <components.html#pagination>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Labels`
+
+      .. progress:: 100%
+         :type: success
+      See `labels <components.html#labels>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Badges`
+
+      .. progress:: 100%
+         :type: success
+      See `badges <components.html#badges>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Jumbotron`
+
+      .. progress:: 25%
+         :type: danger
+      See `jumbotron <components.html#jumbotron>`_
+   .. -------------------------------------------------------------------------
+
+
+.. row::
+
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Page header`
+
+      .. progress:: 25%
+         :type: danger
+      See `page header <components.html#page-header>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Thumbnails`
+
+      .. progress:: 25%
+         :type: danger
+      See `thumbnails <components.html#thumbnails>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Alerts`
+
+      .. progress:: 100%
+         :type: success
+      See `alerts <components.html#alerts>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Progress bars`
+
+      .. progress:: 100%
+         :type: success
+      See `progress bars <components.html#progress-bars>`_
+   .. -------------------------------------------------------------------------
+
+
+.. row::
+
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Media object`
+
+      .. progress:: 25%
+         :type: danger
+      See `media object <components.html#media-object>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`List group`
+
+      .. progress:: 25%
+         :type: danger
+      See `list group <components.html#list-group>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Panels`
+
+      .. progress:: 25%
+         :type: danger
+      See `panels <components.html#panels>`_
+   .. -------------------------------------------------------------------------
+   .. column::
+      :width: 3
+
+      :h4:`Wells`
+
+      .. progress:: 100%
+         :type: success
+      See `wells <components.html#wells>`_
+   .. -------------------------------------------------------------------------

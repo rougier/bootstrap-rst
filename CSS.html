@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap core CSS =================================================== -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="docs-min.css" rel="stylesheet">
+<link href="custom.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="header">
+<div class="bs-docs-header">
+<div class="container">
+<p><h1>Bootstrap RST</h1></p>
+<p>Overview of the project, its contents, and how to get started with a
+simple template.</p>
+</div>
+</div>
+
+</div>
+<div class="container">
+
+
+<div class="row">
+<div class="col-md-3 col-md-push-9">
+<div class="bs-docs-sidebar hidden-print affix-top">
+<div class="sidebar">
+<p class="first sidebar-title">sidebar</p>
+<div class="contents last topic" id="content">
+<p class="topic-title first">content</p>
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id10">Overview</a><ul>
+<li><a class="reference internal" href="#html5-doctype" id="id11">HTML5 doctype</a></li>
+<li><a class="reference internal" href="#mobile-first" id="id12">Mobile first</a></li>
+<li><a class="reference internal" href="#typography-and-links" id="id13">Typography and links</a></li>
+<li><a class="reference internal" href="#normalize-css" id="id14">Normalize.css</a></li>
+<li><a class="reference internal" href="#containers" id="id15">Containers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grid-system" id="id16">Grid system</a><ul>
+<li><a class="reference internal" href="#introduction" id="id17">Introduction</a></li>
+<li><a class="reference internal" href="#media-queries" id="id18">Media queries</a></li>
+<li><a class="reference internal" href="#grid-options" id="id19">Grid options</a></li>
+<li><a class="reference internal" href="#example-stacked-to-horizontal" id="id20">Example: Stacked-to-horizontal</a></li>
+<li><a class="reference internal" href="#offsetting-columns" id="id21">Offsetting columns</a></li>
+<li><a class="reference internal" href="#nesting-columns" id="id22">Nesting columns</a></li>
+<li><a class="reference internal" href="#column-ordering" id="id23">Column ordering</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#typography" id="id24">Typography</a><ul>
+<li><a class="reference internal" href="#headings" id="id25">Headings</a></li>
+<li><a class="reference internal" href="#body-copy" id="id26">Body copy</a></li>
+<li><a class="reference internal" href="#emphasis" id="id27">Emphasis</a></li>
+<li><a class="reference internal" href="#lists" id="id28">Lists</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code" id="id29">Code</a><ul>
+<li><a class="reference internal" href="#inline" id="id30">Inline</a></li>
+<li><a class="reference internal" href="#user-input" id="id31">User input</a></li>
+<li><a class="reference internal" href="#basic-block" id="id32">Basic block</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tables" id="id33">Tables</a><ul>
+<li><a class="reference internal" href="#basic-example" id="id34">Basic example</a></li>
+<li><a class="reference internal" href="#striped-rows" id="id35">Striped rows</a></li>
+<li><a class="reference internal" href="#bordered-table" id="id36">Bordered table</a></li>
+<li><a class="reference internal" href="#hover-rows" id="id37">Hover rows</a></li>
+<li><a class="reference internal" href="#condensed-table" id="id38">Condensed table</a></li>
+<li><a class="reference internal" href="#contextual-classes" id="id39">Contextual classes</a></li>
+<li><a class="reference internal" href="#responsive-tables" id="id40">Responsive tables</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#buttons" id="id41">Buttons</a><ul>
+<li><a class="reference internal" href="#options" id="id42">Options</a></li>
+<li><a class="reference internal" href="#sizes" id="id43">Sizes</a></li>
+<li><a class="reference internal" href="#active-state" id="id44">Active state</a></li>
+<li><a class="reference internal" href="#disabled-state" id="id45">Disabled state</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#helper-classes" id="id46">Helper classes</a><ul>
+<li><a class="reference internal" href="#contextual-colors" id="id47">Contextual colors</a></li>
+<li><a class="reference internal" href="#contextual-background" id="id48">Contextual background</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-9 col-md-pull-3">
+<div class="section" id="overview">
+<h1>Overview</h1>
+<div class="lead">
+Get the lowdown on the key pieces of Bootstrap's infrastructure, including
+our approach to better, faster, stronger web development.</div>
+<div class="section" id="html5-doctype">
+<h2>HTML5 doctype</h2>
+<p>Bootstrap makes use of certain HTML elements and CSS properties that require
+the use of the HTML5 doctype. Include it at the beginning of all your projects.</p>
+<pre class="code html highlight literal-block">
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+</div>
+<div class="section" id="mobile-first">
+<h2>Mobile first</h2>
+<p>With Bootstrap 2, we added optional mobile friendly styles for key aspects of
+the framework. With Bootstrap 3, we've rewritten the project to be mobile
+friendly from the start. Instead of adding on optional mobile styles, they're
+baked right into the core. In fact, <strong>Bootstrap is mobile first</strong>. Mobile first
+styles can be found throughout the entire library instead of in separate files.</p>
+<p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to
+your <code>&lt;head&gt;</code>.</p>
+<pre class="code html highlight literal-block">
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+</pre>
+<p>You can disable zooming capabilities on mobile devices by adding
+<code>user-scalable=no</code> to the viewport meta tag. This disables zooming,
+meaning users are only able to scroll, and results in your site feeling a bit
+more like a native application. Overall, we don't recommend this on every site,
+so use caution!</p>
+<pre class="code html highlight literal-block">
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;</span><span class="nt">&gt;</span>
+</pre>
+</div>
+<div class="section" id="typography-and-links">
+<h2>Typography and links</h2>
+<p>Bootstrap sets basic global display, typography, and link styles. Specifically,
+we:</p>
+<ul class="simple">
+<li>Set <code>background-color: #fff</code>; on the body</li>
+<li>Use the <code>&#64;font-family-base</code>, <code>&#64;font-size-base</code>, and
+<code>&#64;line-height-base</code> attributes as our typographic base</li>
+<li>Set the global link color via <code>&#64;link-color</code> and apply link underlines
+only on :hover</li>
+</ul>
+<p>These styles can be found within <code>scaffolding.less</code>.</p>
+</div>
+<div class="section" id="normalize-css">
+<h2>Normalize.css</h2>
+<p>For improved cross-browser rendering, we use <a class="reference external" href="http://necolas.github.io/normalize.css/">Normalize.css</a>, a project by <a class="reference external" href="https://twitter.com/necolas">Nicolas Gallagher</a> and <a class="reference external" href="https://twitter.com/jon_neal">Jonathan Neal</a>.</p>
+</div>
+<div class="section" id="containers">
+<h2>Containers</h2>
+<p>Easily center a page's contents by wrapping its contents in a
+.container. Containers set width at various media query breakpoints to match
+our grid system.</p>
+<p>Note that, due to padding and fixed widths, containers are not nestable by
+default.</p>
+<pre class="code highlight literal-block">
+.. container::
+
+   ...
+</pre>
+</div>
+</div>
+<div class="section" id="grid-system">
+<h1>Grid system</h1>
+<div class="lead">
+Bootstrap includes a responsive, mobile first fluid grid system that
+appropriately scales up to 12 columns as the device or viewport size
+increases. It includes predefined classes for easy layout options, as well
+as powerful mixins for generating more semantic layouts.</div>
+<div class="section" id="introduction">
+<h2>Introduction</h2>
+<p>Grid systems are used for creating page layouts through a series of rows and
+columns that house your content. Here's how the Bootstrap grid system works:</p>
+<ul class="simple">
+<li>Rows must be placed within a <code>.container</code> (fixed-width) or <code>.container-fluid</code>
+(full-width) for proper alignment and padding.</li>
+<li>Use rows to create horizontal groups of columns.</li>
+<li>Content should be placed within columns, and only columns may be immediate children of rows.</li>
+<li>Predefined grid classes like <code>.row</code> and <code>.col-xs-4</code> are available for quickly
+making grid layouts. Less mixins can also be used for more semantic layouts.</li>
+<li>Columns create gutters (gaps between column content) via padding. That
+padding is offset in rows for the first and last column via negative margin
+on <code>.row</code> s.</li>
+<li>Grid columns are created by specifying the number of twelve available columns
+you wish to span. For example, three equal columns would use three <code>.col-xs-4</code>.
+Look to the examples for applying these principles to your code.</li>
+</ul>
+<p>Look to the examples for applying these principles to your code.</p>
+</div>
+<div class="section" id="media-queries">
+<h2>Media queries</h2>
+<p>We use the following media queries in our Less files to create the key
+breakpoints in our grid system.</p>
+<pre class="code css highlight literal-block">
+<span class="c">/* Extra small devices (phones, less than 768px) */</span>
+<span class="c">/* No media query since this is the default in Bootstrap */</span>
+
+<span class="c">/* Small devices (tablets, 768px and up) */</span>
+<span class="k">&#64;media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">&#64;screen-sm-min</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="c">/* Medium devices (desktops, 992px and up) */</span>
+<span class="k">&#64;media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">&#64;screen-md-min</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+
+<span class="c">/* Large devices (large desktops, 1200px and up) */</span>
+<span class="k">&#64;media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">&#64;screen-lg-min</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+</pre>
+<p>We occasionally expand on these media queries to include a max-width to limit
+CSS to a narrower set of devices.</p>
+<pre class="code css highlight literal-block">
+<span class="k">&#64;media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="k">&#64;screen-xs-max</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="k">&#64;media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">&#64;screen-sm-min</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="k">&#64;screen-sm-max</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="k">&#64;media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">&#64;screen-md-min</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="k">&#64;screen-md-max</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<span class="k">&#64;media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">&#64;screen-lg-min</span><span class="o">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+</pre>
+</div>
+<div class="section" id="grid-options">
+<h2>Grid options</h2>
+<p>See how aspects of the Bootstrap grid system work across multiple devices with
+a handy table.</p>
+<table class="table table-bordered table-striped">
+<colgroup>
+<col width="21%" />
+<col width="21%" />
+<col width="18%" />
+<col width="19%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">&nbsp;</th>
+<th class="head">Extra small devices
+Phones (&lt;768px)</th>
+<th class="head">Small devices
+Tablets (≥768px)</th>
+<th class="head">Medium devices
+Desktops (≥992px)</th>
+<th class="head">Large devices
+Desktops (≥1200px)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><strong>Grid Behavior</strong></td>
+<td>Horizontal at all
+times</td>
+<td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+</tr>
+<tr><td><strong>Container Width</strong></td>
+<td>None (auto)</td>
+<td>750px</td>
+<td>970px</td>
+<td>1170px</td>
+</tr>
+<tr><td><strong>Class Predix</strong></td>
+<td><code>col-xs-</code></td>
+<td><code>col-sd-</code></td>
+<td><code>col-md-</code></td>
+<td><code>col-lg-</code></td>
+</tr>
+<tr><td><strong># Columns</strong></td>
+<td colspan="4">12</td>
+</tr>
+<tr><td><strong>Column Width</strong></td>
+<td><span class="text-muted">Auto</span></td>
+<td>60px</td>
+<td>78px</td>
+<td>95px</td>
+</tr>
+<tr><td><strong>Gutter width</strong></td>
+<td colspan="4">30px (15px on each side of a column)</td>
+</tr>
+<tr><td><strong>Netsable</strong></td>
+<td colspan="4">Yes</td>
+</tr>
+<tr><td><strong>Offsets</strong></td>
+<td colspan="4">Yes</td>
+</tr>
+<tr><td><strong>Column Ordering</strong></td>
+<td colspan="4">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Grid classes apply to devices with screen widths greater than or equal to the
+breakpoint sizes, and override grid classes targeted at smaller
+devices. Therefore, applying any <code>.col-md-</code> class to an element will not only
+affect its styling on medium devices but also on large devices if a <code>.col-lg-</code>
+class is not present.</p>
+</div>
+<div class="section" id="example-stacked-to-horizontal">
+<h2>Example: Stacked-to-horizontal</h2>
+<p>Using a single set of <code>.col-md-*</code> grid classes, you can create a basic grid
+system that starts out stacked on mobile devices and tablet devices (the extra
+small to small range) before becoming horizontal on desktop (medium)
+devices. Place grid columns in any <code>.row</code>.</p>
+<div class="row show-grid">
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+<div class="col-md-1">
+.col-md-1</div>
+</div>
+<div class="row show-grid">
+<div class="col-md-8">
+.col-md-8</div>
+<div class="col-md-4">
+.col-md-4</div>
+</div>
+<div class="row show-grid">
+<div class="col-md-4">
+.col-md-4</div>
+<div class="col-md-4">
+.col-md-4</div>
+<div class="col-md-4">
+.col-md-4</div>
+</div>
+<div class="row show-grid">
+<div class="col-md-6">
+.col-md-6</div>
+<div class="col-md-6">
+.col-md-6</div>
+</div>
+</div>
+<div class="section" id="offsetting-columns">
+<h2>Offsetting columns</h2>
+<p>Move columns to the right using <code>.col-md-offset-*</code> classes. These classes
+increase the left margin of a column by * columns. For example,
+<code>.col-md-offset-4</code> moves <code>.col-md-4</code> over four columns.</p>
+<div class="row show-grid">
+<div class="col-md-4">
+.col-md-4</div>
+<div class="col-md-4 col-md-offset-4">
+.col-md-4</div>
+</div>
+<div class="row show-grid">
+<div class="col-md-3 col-md-offset-3">
+.col-md-3</div>
+<div class="col-md-3 col-md-offset-3">
+.col-md-3</div>
+</div>
+<div class="row show-grid">
+<div class="col-md-6 col-md-offset-3">
+.col-md-6</div>
+</div>
+</div>
+<div class="section" id="nesting-columns">
+<h2>Nesting columns</h2>
+<p>To nest your content with the default grid, add a new <code>.row</code> and set of
+<code>.col-md-*</code> columns within an existing <code>.col-md-*</code> column. Nested rows should
+include a set of columns that add up to 12 or less.</p>
+<div class="row show-grid">
+<div class="col-md-9">
+<p>Level 1: .col-md-9</p>
+<div class="row show-grid">
+<div class="col-md-6">
+Level 2: .col-md-6</div>
+<div class="col-md-6">
+Level 2: .col-md-6</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="column-ordering">
+<h2>Column ordering</h2>
+<p>Easily change the order of our built-in grid columns with .col-md-push-* and
+.col-md-pull-* modifier classes.</p>
+<div class="row show-grid">
+<div class="col-md-9 col-md-push-3">
+.col-md-9 . col-push-3</div>
+<div class="col-md-3 col-md-pull-9">
+.col-md-3 . col-pull-9</div>
+</div>
+<pre class="code highlight literal-block">
+.. column:: .col-md-9 . col-push-3
+   :width: 9
+   :push: 3
+
+.. column:: .col-md-3 . col-pull-9
+   :width: 3
+   :pull: 9
+</pre>
+</div>
+</div>
+<div class="section" id="typography">
+<h1>Typography</h1>
+<div class="section" id="headings">
+<h2>Headings</h2>
+<p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code>
+through <code>.h6</code> classes are also available, for when you want to match the font
+styling of a heading but still want your text to be displayed inline.</p>
+<div class="bs-example">
+<table class="table">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><h1>h1. Bootstrap heading</h1></td>
+<td><strong>Semibold 36 px</strong></td>
+</tr>
+<tr><td><h2>h2. Bootstrap heading</h2></td>
+<td><strong>Semibold 30 px</strong></td>
+</tr>
+<tr><td><h3>h3. Bootstrap heading</h3></td>
+<td><strong>Semibold 24 px</strong></td>
+</tr>
+<tr><td><h4>h4. Bootstrap heading</h4></td>
+<td><strong>Semibold 18 px</strong></td>
+</tr>
+<tr><td><h5>h5. Bootstrap heading</h5></td>
+<td><strong>Semibold 14 px</strong></td>
+</tr>
+<tr><td><h6>h6. Bootstrap heading</h6></td>
+<td><strong>Semibold 12 px</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="code highlight literal-block">
+h1. Bootstrap heading
+=====================
+
+h2. Bootstrap heading
+---------------------
+
+h3. Bootstrap heading
++++++++++++++++++++++
+
+h4. Bootstrap heading
+~~~~~~~~~~~~~~~~~~~~~
+
+h5. Bootstrap heading
+*********************
+
+h6. Bootstrap heading
+¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+</pre>
+<p>Create lighter, secondary text in any heading with a generic <code>small</code> tag.</p>
+<div class="bs-example">
+<table class="table">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><h1>h1. Bootstrap heading <small>Secondary text</small></h1></td>
+</tr>
+<tr><td><h2>h2. Bootstrap heading <small>Secondary text</small></h2></td>
+</tr>
+<tr><td><h3>h3. Bootstrap heading <small>Secondary text</small></h3></td>
+</tr>
+<tr><td><h4>h4. Bootstrap heading <small>Secondary text</small></h4></td>
+</tr>
+<tr><td><h5>h5. Bootstrap heading <small>Secondary text</small></h5></td>
+</tr>
+<tr><td><h6>h6. Bootstrap heading <small>Secondary text</small></h6></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="code highlight literal-block">
+h1. Bootstrap heading :small:`Secondary text`
+=============================================
+
+h2. Bootstrap heading :small:`Secondary text`
+---------------------------------------------
+
+h3. Bootstrap heading :small:`Secondary text`
++++++++++++++++++++++++++++++++++++++++++++++
+
+h4. Bootstrap heading :small:`Secondary text`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+h5. Bootstrap heading :small:`Secondary text`
+*********************************************
+
+h6. Bootstrap heading :small:`Secondary text`
+¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+</pre>
+</div>
+<div class="section" id="body-copy">
+<h2>Body copy</h2>
+<p>Bootstrap's global default <code>font-size</code> is <strong>14px</strong>, with a line-height of
+<strong>1.428</strong>. This is applied to the <code>&lt;body&gt;</code> and all paragraphs. In addition,
+<code>&lt;p&gt;</code> (paragraphs) receive a bottom margin of half their computed line-height
+(10px by default).</p>
+<div class="bs-example">
+<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque
+penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id
+dolor id nibh ultricies vehicula.</p>
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis
+mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
+odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id
+elit non mi porta gravida at eget metus. Duis mollis, est non commodo
+luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+</div>
+<pre class="code highlight literal-block">
+...
+</pre>
+<div class="section" id="lead-body-copy">
+<h3>Lead body copy</h3>
+<p>Make a paragraph stand out by adding lead.</p>
+<div class="bs-example">
+<div class="lead">
+Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+auctor. Duis mollis, est non commodo luctus.</div>
+</div>
+<pre class="code highlight literal-block">
+.. lead:: Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+          auctor. Duis mollis, est non commodo luctus.
+</pre>
+</div>
+<div class="section" id="built-with-less">
+<h3>Built with Less</h3>
+<p>The typographic scale is based on two Less variables in <strong>variables.less</strong>:
+<code>&#64;font-size-base</code> and <code>&#64;line-height-base</code>. The first is the base font-size used
+throughout and the second is the base line-height. We use those variables and
+some simple math to create the margins, paddings, and line-heights of all our
+type and more. Customize them and Bootstrap adapts.</p>
+</div>
+</div>
+<div class="section" id="emphasis">
+<h2>Emphasis</h2>
+<p>Make use of HTML's default emphasis tags with lightweight styles.</p>
+<div class="section" id="small-text">
+<h3>Small text</h3>
+<p>For de-emphasizing inline or blocks of text, use the <code>small</code> tag to set text at
+85% the size of the parent. Heading elements receive their own font-size for
+nested <code>small</code> elements.</p>
+<div class="bs-example">
+<span class="small">This line of text is meant to be treated as fine print.</span></div>
+<pre class="code highlight literal-block">
+:small:`This line of text is meant to be treated as fine print.`
+</pre>
+</div>
+<div class="section" id="bold">
+<h3>Bold</h3>
+<p>For emphasizing a snippet of text with a heavier font-weight.</p>
+<div class="bs-example">
+The following snippet of text is <strong>rendered as bold text</strong>.</div>
+<pre class="code highlight literal-block">
+The following snippet of text is **rendered as bold text**.
+</pre>
+</div>
+<div class="section" id="italics">
+<h3>Italics</h3>
+<p>For emphasizing a snippet of text with italics.</p>
+<div class="bs-example">
+The following snippet of text is <em>rendered as italicized text</em>.</div>
+<pre class="code highlight literal-block">
+The following snippet of text is *rendered as italicized text*.
+</pre>
+<div class="bs-callout bs-callout-info admonition">
+<p class="first admonition-title"><h4>Alternate elements</h4></p>
+<p class="last">Feel free to use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> in HTML5. <code>&lt;b&gt;</code> is meant to highlight words or
+phrases without conveying additional importance while <code>&lt;i&gt;</code> is mostly for
+voice, technical terms, etc.</p>
+</div>
+</div>
+<div class="section" id="alignment-classes">
+<h3>Alignment classes</h3>
+<p>Easily realign text to components with text alignment classes.</p>
+<div class="bs-example">
+<p><a href="#id2"><span class="problematic" id="id3">:text-left:`Left aligned text.`</span></a></p>
+<div class="system-message" id="id2">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">doc/CSS-typography.txt</tt>, line 217); <em><a href="#id3">backlink</a></em></p>
+Unknown interpreted text role &quot;text-left&quot;.</div>
+<p><a href="#id4"><span class="problematic" id="id5">:text-center:`Center aligned text.`</span></a></p>
+<div class="system-message" id="id4">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">doc/CSS-typography.txt</tt>, line 219); <em><a href="#id5">backlink</a></em></p>
+Unknown interpreted text role &quot;text-center&quot;.</div>
+<p><a href="#id6"><span class="problematic" id="id7">:text-right:`Right aligned text.`</span></a></p>
+<div class="system-message" id="id6">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">doc/CSS-typography.txt</tt>, line 221); <em><a href="#id7">backlink</a></em></p>
+Unknown interpreted text role &quot;text-right&quot;.</div>
+<p><a href="#id8"><span class="problematic" id="id9">:text-justify:`Justified text.`</span></a></p>
+<div class="system-message" id="id8">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">doc/CSS-typography.txt</tt>, line 223); <em><a href="#id9">backlink</a></em></p>
+Unknown interpreted text role &quot;text-justify&quot;.</div>
+</div>
+<pre class="code highlight literal-block">
+.. text-left:: Left aligned text.
+
+.. text-center:: Center aligned text.
+
+.. text-right:: Right aligned text.
+
+.. text-justify:: Justified text.
+</pre>
+</div>
+</div>
+<div class="section" id="lists">
+<h2>Lists</h2>
+<div class="section" id="unordered">
+<h3>Unordered</h3>
+<p>A list of items in which the order does <em>not</em> explicitly matter.</p>
+<div class="bs-example">
+<ul class="simple">
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit<ul>
+<li>Phasellus iaculis neque</li>
+<li>Purus sodales ultricies</li>
+<li>Vestibulum laoreet porttitor sem</li>
+<li>Ac tristique libero volutpat at</li>
+</ul>
+</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ul>
+</div>
+<pre class="code highlight literal-block">
+* Lorem ipsum dolor sit amet
+* Consectetur adipiscing elit
+  ...
+</pre>
+</div>
+<div class="section" id="ordered">
+<h3>Ordered</h3>
+<p>A list of items in which the order <em>does</em> matter.</p>
+<div class="bs-example">
+<ol class="arabic simple">
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ol>
+</div>
+<pre class="code highlight literal-block">
+1. Lorem ipsum dolor sit amet
+#. Consectetur adipiscing elit
+   ...
+</pre>
+</div>
+<div class="section" id="unstyled">
+<h3>Unstyled</h3>
+<p>Remove the default <code>list-style</code> and left margin on list items (immediate children
+only). <strong>This only applies to immediate children list items</strong>, meaning you will
+need to add the class for any nested lists as well.</p>
+<div class="bs-example">
+<ul class="list-unstyled">
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit<ul>
+<li>Phasellus iaculis neque</li>
+<li>Purus sodales ultricies</li>
+<li>Vestibulum laoreet porttitor sem</li>
+<li>Ac tristique libero volutpat at</li>
+</ul>
+</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ul>
+</div>
+<pre class="code highlight literal-block">
+.. list:: list-unstyled
+
+   * Lorem ipsum dolor sit amet
+   * Consectetur adipiscing elit
+     ...
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="code">
+<h1>Code</h1>
+<div class="section" id="inline">
+<h2>Inline</h2>
+<p>Wrap inline snippets of code with <code>:code:</code>.</p>
+<div class="bs-example">
+For example, <code>&lt;section&gt;</code> should be wrapped as inline.</div>
+<pre class="code highlight literal-block">
+For example, :code:`&lt;section&gt;` should be wrapped as inline.
+</pre>
+</div>
+<div class="section" id="user-input">
+<h2>User input</h2>
+<p>Use the <code>:kbd:</code> to indicate input that is typically entered via keyboard.</p>
+<div class="bs-example">
+To switch directories, type <span class="kbd">cd</span> followed by the name of the directory.</div>
+<pre class="code highlight literal-block">
+To switch directories, type :kbd:`cd` followed by the name of the directory.
+</pre>
+</div>
+<div class="section" id="basic-block">
+<h2>Basic block</h2>
+<p>Use <code>.. code::</code> for multiple lines of code. Be sure to escape any angle brackets in
+the code for proper rendering.</p>
+<div class="bs-example">
+Sample text here...</div>
+<pre class="code highlight literal-block">
+Sample text here...
+</pre>
+<p>You may optionally add the pre-scrollable class, which will set a max-height
+of 350px and provide a y-axis scrollbar.</p>
+</div>
+</div>
+<div class="section" id="tables">
+<h1>Tables</h1>
+<div class="section" id="basic-example">
+<h2>Basic example</h2>
+<p>For basic styling—light padding and only horizontal dividers—add the base class
+.table to any <code>&lt;table&gt;</code>. It may seem super redundant, but given the widespread
+use of tables for other plugins like calendars and date pickers, we've opted to
+isolate our custom table styles.</p>
+<div class="bs-example">
+<table class="table">
+<colgroup>
+<col width="4%" />
+<col width="36%" />
+<col width="32%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">#</th>
+<th class="head">First Name</th>
+<th class="head">Last Name</th>
+<th class="head">Username</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>1</td>
+<td>Mark</td>
+<td>Otto</td>
+<td>&#64;mdo</td>
+</tr>
+<tr><td>2</td>
+<td>Jacob</td>
+<td>Thornton</td>
+<td>&#64;fat</td>
+</tr>
+<tr><td>3</td>
+<td>Larry</td>
+<td>the Bird</td>
+<td>&#64;twitter</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="code highlight literal-block">
+= ========== ========= ========
+# First Name Last Name Username
+= ========== ========= ========
+1 Mark       Otto      &#64;mdo
+2 Jacob      Thornton  &#64;fat
+3 Larry      the Bird  &#64;twitter
+= ========== ========= ========
+</pre>
+</div>
+<div class="section" id="striped-rows">
+<h2>Striped rows</h2>
+<p>Use <code>table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
+<div class="bs-callout bs-callout-danger">
+<h4>Cross-browser compatibility</h4>
+Striped tables are styled via the <code>:nth-child</code> CSS selector, which is not
+available in Internet Explorer 8.</div>
+<div class="bs-example">
+<table class="table-striped table">
+<colgroup>
+<col width="4%" />
+<col width="36%" />
+<col width="32%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">#</th>
+<th class="head">First Name</th>
+<th class="head">Last Name</th>
+<th class="head">Username</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>1</td>
+<td>Mark</td>
+<td>Otto</td>
+<td>&#64;mdo</td>
+</tr>
+<tr><td>2</td>
+<td>Jacob</td>
+<td>Thornton</td>
+<td>&#64;fat</td>
+</tr>
+<tr><td>3</td>
+<td>Larry</td>
+<td>the Bird</td>
+<td>&#64;twitter</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="code highlight literal-block">
+.. table::
+   :class: table-striped
+
+   = ========== ========= ========
+   # First Name Last Name Username
+   = ========== ========= ========
+   1 Mark       Otto      &#64;mdo
+   2 Jacob      Thornton  &#64;fat
+   3 Larry      the Bird  &#64;twitter
+   = ========== ========= ========
+</pre>
+</div>
+<div class="section" id="bordered-table">
+<h2>Bordered table</h2>
+<p>Add <code>table-bordered</code> for borders on all sides of the table and cells.</p>
+<div class="bs-example">
+<table class="table-bordered table-striped table">
+<colgroup>
+<col width="4%" />
+<col width="36%" />
+<col width="32%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">#</th>
+<th class="head">First Name</th>
+<th class="head">Last Name</th>
+<th class="head">Username</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>1</td>
+<td>Mark</td>
+<td>Otto</td>
+<td>&#64;mdo</td>
+</tr>
+<tr><td>2</td>
+<td>Jacob</td>
+<td>Thornton</td>
+<td>&#64;fat</td>
+</tr>
+<tr><td>3</td>
+<td>Larry</td>
+<td>the Bird</td>
+<td>&#64;twitter</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="code highlight literal-block">
+.. table::
+   :class: table-bordered table-striped
+
+   = ========== ========= ========
+   # First Name Last Name Username
+   = ========== ========= ========
+   1 Mark       Otto      &#64;mdo
+   2 Jacob      Thornton  &#64;fat
+   3 Larry      the Bird  &#64;twitter
+   = ========== ========= ========
+</pre>
+</div>
+<div class="section" id="hover-rows">
+<h2>Hover rows</h2>
+<p>Add <code>table-hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.</p>
+<div class="bs-example">
+<table class="table-hover table">
+<colgroup>
+<col width="4%" />
+<col width="36%" />
+<col width="32%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">#</th>
+<th class="head">First Name</th>
+<th class="head">Last Name</th>
+<th class="head">Username</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>1</td>
+<td>Mark</td>
+<td>Otto</td>
+<td>&#64;mdo</td>
+</tr>
+<tr><td>2</td>
+<td>Jacob</td>
+<td>Thornton</td>
+<td>&#64;fat</td>
+</tr>
+<tr><td>3</td>
+<td>Larry</td>
+<td>the Bird</td>
+<td>&#64;twitter</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="code highlight literal-block">
+.. table::
+   :class: table-hover
+
+   = ========== ========= ========
+   # First Name Last Name Username
+   = ========== ========= ========
+   1 Mark       Otto      &#64;mdo
+   2 Jacob      Thornton  &#64;fat
+   3 Larry      the Bird  &#64;twitter
+   = ========== ========= ========
+</pre>
+</div>
+<div class="section" id="condensed-table">
+<h2>Condensed table</h2>
+<p>Add <code>table-condensed</code> to make tables more compact by cutting cell padding in half.</p>
+<div class="bs-example">
+<table class="table-condensed table">
+<colgroup>
+<col width="4%" />
+<col width="36%" />
+<col width="32%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">#</th>
+<th class="head">First Name</th>
+<th class="head">Last Name</th>
+<th class="head">Username</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>1</td>
+<td>Mark</td>
+<td>Otto</td>
+<td>&#64;mdo</td>
+</tr>
+<tr><td>2</td>
+<td>Jacob</td>
+<td>Thornton</td>
+<td>&#64;fat</td>
+</tr>
+<tr><td>3</td>
+<td>Larry</td>
+<td>the Bird</td>
+<td>&#64;twitter</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="code highlight literal-block">
+.. table::
+   :class: table-condensed
+
+   = ========== ========= ========
+   # First Name Last Name Username
+   = ========== ========= ========
+   1 Mark       Otto      &#64;mdo
+   2 Jacob      Thornton  &#64;fat
+   3 Larry      the Bird  &#64;twitter
+   = ========== ========= ========
+</pre>
+</div>
+<div class="section" id="contextual-classes">
+<h2>Contextual classes</h2>
+<p><span class="text-muted">N/A</span></p>
+</div>
+<div class="section" id="responsive-tables">
+<h2>Responsive tables</h2>
+<p>Create responsive tables by wrapping any <code>.table</code> in <code>.table-responsive</code> to
+make them scroll horizontally up to small devices (under 768px). When viewing
+on anything larger than 768px wide, you will not see any difference in these
+tables.</p>
+<div class="bs-example">
+<div class="table-responsive">
+<table class="table-bordered table-striped table">
+<colgroup>
+<col width="2%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">#</th>
+<th class="head">Table heading</th>
+<th class="head">Table heading</th>
+<th class="head">Table heading</th>
+<th class="head">Table heading</th>
+<th class="head">Table heading</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>1</td>
+<td>Table cell</td>
+<td>Table cell</td>
+<td>Table cell</td>
+<td>Table cell</td>
+<td>Table cell</td>
+</tr>
+<tr><td>2</td>
+<td>Table cell</td>
+<td>Table cell</td>
+<td>Table cell</td>
+<td>Table cell</td>
+<td>Table cell</td>
+</tr>
+<tr><td>3</td>
+<td>Table cell</td>
+<td>Table cell</td>
+<td>Table cell</td>
+<td>Table cell</td>
+<td>Table cell</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="code highlight literal-block">
+.. container:: table-responsive
+
+   .. table::
+      :class: table-bordered table-striped
+
+      = ============= ============= ============= ============= =============
+      # Table heading Table heading Table heading Table heading Table heading
+      = ============= ============= ============= ============= =============
+      1 Table cell    Table cell    Table cell    Table cell    Table cell
+      2 Table cell    Table cell    Table cell    Table cell    Table cell
+      3 Table cell    Table cell    Table cell    Table cell    Table cell
+      = ============= ============= ============= ============= =============
+</pre>
+</div>
+</div>
+<div class="section" id="buttons">
+<h1>Buttons</h1>
+<div class="section" id="options">
+<h2>Options</h2>
+<p>Use any of the available button classes to quickly create a styled button.</p>
+<div class="bs-example">
+<a href="Options_" class="btn btn-default "  role="button">Default</a>
+<button class="btn btn-primary "  type="button">Primary</button>
+<button class="btn btn-success "  type="button">Success</button>
+<button class="btn btn-info "  type="button">Info</button>
+<button class="btn btn-warning "  type="button">Warning</button>
+<button class="btn btn-danger "  type="button">Danger</button>
+<button class="btn btn-link "  type="button">Link</button>
+</div>
+<pre class="code highlight literal-block">
+.. button:: Default
+   :type: default
+
+.. button:: Primary
+   :type: primary
+
+.. button:: Success
+   :type: success
+
+.. button:: Info
+   :type: info
+
+.. button:: Warning
+   :type: warning
+
+.. button:: Danger
+   :type: danger
+
+.. button:: Link
+   :type: link
+</pre>
+</div>
+<div class="section" id="sizes">
+<h2>Sizes</h2>
+<p>Fancy larger or smaller buttons? Add <code>large</code>, <code>small</code>, or
+<code>tiny</code> for additional sizes.</p>
+<div class="bs-example">
+<button class="btn btn-primary btn-lg"  type="button">Large button</button>
+<button class="btn btn-default btn-lg"  type="button">Large button</button>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<button class="btn btn-primary "  type="button">Default button</button>
+<button class="btn btn-default "  type="button">Default button</button>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<button class="btn btn-primary btn-sm"  type="button">Small button</button>
+<button class="btn btn-default btn-sm"  type="button">Small button</button>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<button class="btn btn-primary btn-xs"  type="button">Tiny button</button>
+<button class="btn btn-default btn-xs"  type="button">Tiny button</button>
+</div>
+<pre class="code highlight literal-block">
+.. button:: Large button
+   :type: primary
+   :size: large
+
+.. button:: Large button
+   :size: large
+
+.. button:: Default button
+   :type: primary
+   :size: default
+
+.. button:: Default button
+   :type: default
+   :size: default
+
+.. button:: Small button
+   :type: primary
+   :size: small
+
+.. button:: Small button
+   :size: small
+
+.. button:: Tiny button
+   :type: primary
+   :size: tiny
+
+.. button:: Tiny button
+   :size: tiny
+</pre>
+<p>Create block level buttons—those that span the full width of a parent by adding
+<code>block</code>.</p>
+<div class="bs-example">
+<div class="well">
+<button class="btn btn-primary btn-lg btn-block"  type="button">Block level button</button>
+<button class="btn btn-default btn-lg btn-block"  type="button">Block level button</button>
+</div>
+</div>
+<pre class="code highlight literal-block">
+.. button:: Block level button
+   :type: primary
+   :size: large
+   :block:
+
+.. button:: Block level button
+   :type: default
+   :size: large
+   :block:
+</pre>
+</div>
+<div class="section" id="active-state">
+<h2>Active state</h2>
+<p>Buttons will appear pressed (with a darker background, darker border, and inset
+shadow) when <code>active</code>.</p>
+<div class="bs-example">
+<button class="btn btn-primary btn-lg active"  type="button">Primary button</button>
+<button class="btn btn-default btn-lg active"  type="button">Button</button>
+</div>
+<pre class="code highlight literal-block">
+.. button:: Primary button
+   :type: primary
+   :size: large
+   :active:
+
+.. button:: Button
+   :type: default
+   :size: large
+   :active:
+</pre>
+</div>
+<div class="section" id="disabled-state">
+<h2>Disabled state</h2>
+<p>Make buttons look unclickable by fading them back 50% using the <code>disabled</code>
+option.</p>
+<div class="bs-example">
+<button class="btn btn-primary btn-lg disabled"  type="button">Primary button</button>
+<button class="btn btn-default btn-lg disabled"  type="button">Button</button>
+</div>
+<pre class="code highlight literal-block">
+.. button:: Primary button
+   :type: primary
+   :size: large
+   :disabled:
+
+.. button:: Button
+   :type: default
+   :size: large
+   :disabled:
+</pre>
+</div>
+</div>
+<div class="section" id="helper-classes">
+<h1>Helper classes</h1>
+<div class="section" id="contextual-colors">
+<h2>Contextual colors</h2>
+<p>Convey meaning through color with a handful of emphasis utility classes. These
+may also be applied to links and will darken on hover just like our default
+link styles.</p>
+<div class="bs-example">
+<div class="line-block">
+<div class="line"><span class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</span></div>
+<div class="line"><span class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</span></div>
+<div class="line"><span class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</span></div>
+<div class="line"><span class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</span></div>
+<div class="line"><span class="text-warning">Etiam porta sem malesuada magna mollis euismod.</span></div>
+<div class="line"><span class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</span></div>
+</div>
+</div>
+<pre class="code rst highlight literal-block">
+<span class="na">:text-muted:</span><span class="nv">`Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.`</span>
+<span class="na">:text-primary:</span><span class="nv">`Nullam id dolor id nibh ultricies vehicula ut id elit.`</span>
+<span class="na">:text-success:</span><span class="nv">`Duis mollis, est non commodo luctus, nisi erat porttitor ligula.`</span>
+<span class="na">:text-info:</span><span class="nv">`Maecenas sed diam eget risus varius blandit sit amet non magna.`</span>
+<span class="na">:text-warning:</span><span class="nv">`Etiam porta sem malesuada magna mollis euismod.`</span>
+<span class="na">:text-danger:</span><span class="nv">`Donec ullamcorper nulla non metus auctor fringilla.`</span>
+</pre>
+</div>
+<div class="section" id="contextual-background">
+<h2>Contextual background</h2>
+<p>Similar to the contextual text color classes, easily set the background of an
+element to any contextual class. Anchor components will darken on hover, just
+like the text classes.</p>
+<div class="bs-example bs-example-bg-classes">
+<div class="bg-primary">
+Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
+<div class="bg-success">
+Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
+<div class="bg-info">
+Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
+<div class="bg-warning">
+Etiam porta sem malesuada magna mollis euismod.</div>
+<div class="bg-danger">
+Donec ullamcorper nulla non metus auctor fringilla.</div>
+</div>
+<pre class="code rst highlight literal-block">
+<span class="na">:bg-primary:</span><span class="nv">`Nullam id dolor id nibh ultricies vehicula ut id elit.`</span>
+<span class="na">:bg-success:</span><span class="nv">`Duis mollis, est non commodo luctus, nisi erat porttitor ligula.`</span>
+<span class="na">:bg-info:</span><span class="nv">`Maecenas sed diam eget risus varius blandit sit amet non magna.`</span>
+<span class="na">:bg-warning:</span><span class="nv">`Etiam porta sem malesuada magna mollis euismod.`</span>
+<span class="na">:bg-danger:</span><span class="nv">`Donec ullamcorper nulla non metus auctor fringilla.`</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap core JavaScript ============================================ -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<div class="bs-docs-footer footer">
+<p>Bootstrap RST - Copyright (c) 2014 Nicolas P. Rougier</p>
+<p><a class="reference external" href="http://getbootstrap.com">Bootstrap</a> - Copyright (c) 2011-2014 Twitter, Inc</p>
+<p>Code licensed under MIT, documentation under CC BY 3.0.</p>
+<p><a class="reference external" href="doc/CSS.rst">Get page source</a></p>
+<ul class="bs-docs-footer-links muted">
+<li><a class="reference external" href="https://github.com/rougier/bootstrap-rst">GitHub</a></li>
+<li>·</li>
+<li><a class="reference external" href="examples.html">Examples</a></li>
+<li>·</li>
+<li><a class="reference external" href="about.html">Documentation</a></li>
+<li>·</li>
+<li><a class="reference external" href="about.html">About</a></li>
+<li>·</li>
+<li><a class="reference external" href="https://github.com/rougier/bootstrap-rst/issues">Issues</a></li>
+<li>·</li>
+<li><a class="reference external" href="https://github.com/rougier/bootstrap-rst/releases">Releases</a></li>
+</ul>
+
+</div>
+</body>
+</html>
