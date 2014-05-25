@@ -3,7 +3,7 @@
    .. column::
       :width: 3
 
-      .. list:: list-unstyled
+      .. class:: list-unstyled
 
          * |asterisk| : asterisk
          * |plus| : plus
@@ -59,7 +59,7 @@
    .. column::
       :width: 3
 
-      .. list:: list-unstyled
+      .. class:: list-unstyled
 
          * |print| : print
          * |camera| : camera
@@ -115,7 +115,7 @@
    .. column::
       :width: 3
 
-      .. list:: list-unstyled
+      .. class:: list-unstyled
 
          * |resize-full| : resize-full
          * |resize-small| : resize-small
@@ -171,7 +171,7 @@
    .. column::
       :width: 3
 
-      .. list:: list-unstyled
+      .. class:: list-unstyled
 
          * |sort| : sort
          * |sort-by-alphabet| : sort-by-alphabet

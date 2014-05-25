@@ -28,7 +28,7 @@
 
    `Get page source <doc/CSS.rst>`_
 
-   .. list:: bs-docs-footer-links muted
+   .. class:: bs-docs-footer-links muted
 
       * `GitHub <https://github.com/rougier/bootstrap-rst>`_
       * ·

@@ -92,26 +92,26 @@ class Lead(Directive):
         return [node]
 
 
-class List(Directive):
-    required_arguments, optional_arguments = 0,1
-    has_content = True
-    final_argument_whitespace = True
+# class List(Directive):
+#     required_arguments, optional_arguments = 0,1
+#     has_content = True
+#     final_argument_whitespace = True
 
-    # option_spec = {'class':  directives.class_option}
-    def run(self):
-        # Raise an error if the directive does not have contents.
-        self.assert_has_content()
-        text = '\n'.join(self.content)
+#     # option_spec = {'class':  directives.class_option}
+#     def run(self):
+#         # Raise an error if the directive does not have contents.
+#         self.assert_has_content()
+#         text = '\n'.join(self.content)
 
-        # Create the node, to be populated by `nested_parse`.
-        # node = nodes.container(text, **self.options)
-        node = mute(text, **self.options)
-        node['classes'] += self.options.get('class', [])
-        if self.arguments:
-            node['list-class'] = self.arguments
-        # Parse the directive contents.
-        self.state.nested_parse(self.content, self.content_offset, node)
-        return [node]
+#         # Create the node, to be populated by `nested_parse`.
+#         # node = nodes.container(text, **self.options)
+#         node = mute(text, **self.options)
+#         node['classes'] += self.options.get('class', [])
+#         if self.arguments:
+#             node['list-class'] = self.arguments
+#         # Parse the directive contents.
+#         self.state.nested_parse(self.content, self.content_offset, node)
+#         return [node]
 
 
 
@@ -322,7 +322,6 @@ class Footer(Directive):
 
 
 directives.register_directive('progress', Progress)
-directives.register_directive('list', List)
 directives.register_directive('alert', Alert)
 directives.register_directive('callout', Callout)
 directives.register_directive('lead', Lead)

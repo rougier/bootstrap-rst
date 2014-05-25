@@ -209,28 +209,18 @@ class HTMLTranslator(html4css1.HTMLTranslator):
         self.body.append('</div>\n')
 
 
-    def visit_mute(self, node):
-        pass
+    # def visit_mute(self, node):
+    #     pass
 
-    def depart_mute(self, node):
-        pass
-
+    # def depart_mute(self, node):
+    #     pass
 
     # overwritten
-    def visit_bullet_list(self, node):
-        list_class = node.parent.get('list-class', '')
-
-        atts = {}
-        old_compact_simple = self.compact_simple
-        self.context.append((self.compact_simple, self.compact_p))
-        self.compact_p = None
-        self.compact_simple = self.is_compactable(node)
-        if list_class:
-            atts['class'] = list_class[0]
-        elif self.compact_simple and not old_compact_simple:
-            atts['class'] = 'simple'
-        self.body.append(self.starttag(node, 'ul', **atts))
-
+    def visit_definition_list(self, node):
+        list_class = node.parent.get('list-class', [])
+        list_class.append('docutils')
+        list_class = ' '.join(list_class)
+        self.body.append(self.starttag(node, 'dl', CLASS=list_class))
 
     # overwritten
     def visit_sidebar(self, node):

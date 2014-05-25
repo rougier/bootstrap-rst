@@ -31,7 +31,7 @@
 
    `Get page source <getting-started.rst>`_
 
-   .. list:: bs-docs-footer-links muted
+   .. class:: bs-docs-footer-links muted
 
       * GitHub
       * ·
@@ -144,7 +144,7 @@ information is provided below.
       .. button:: |caret| :sr-only:`Dropdown`
          :toggle:
 
-      .. list:: dropdown-menu
+      .. class:: dropdown-menu
 
          * `Drowpdown link <www.loria.fr>`_
          * `Drowpdown link <www.loria.fr>`_
@@ -157,7 +157,7 @@ information is provided below.
    .. button:: |caret| :sr-only:`Dropdown`
       :toggle:
 
-   .. list:: dropdown-menu
+   .. class:: dropdown-menu
 
       * `Drowpdown link <www.loria.fr>`_
       * `Drowpdown link <www.loria.fr>`_
