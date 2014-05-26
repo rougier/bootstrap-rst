@@ -100,6 +100,27 @@ class HTMLTranslator(html4css1.HTMLTranslator):
         self.body.append('</div>\n')
 
 
+
+    def visit_panel(self, node):
+
+        # self.body.append(self.starttag(node, 'div', CLASS='panel'))
+        # if node['header']:
+        #     self.body.append('<div class = "panel-heading">\n')
+        #     self.body.append(node['header'] + '\n')
+        #     self.body.append('</div>\n')
+        # self.body.append('<div class="panel-body">')
+        pass
+
+    def depart_panel(self, node):
+        # self.body.append('</div>\n')
+        # if node['footer']:
+        #     self.body.append('<div class = "panel-footer">\n')
+        #     self.body.append(node['footer'] + '\n')
+        #     self.body.append('</div>\n')
+        # self.body.append('</div>\n')
+        pass
+
+
     def visit_button(self, node):
         types = { 'default' : 'btn-default',  'primary' : 'btn-primary',
                   'success' : 'btn-success',  'info'    : 'btn-info',

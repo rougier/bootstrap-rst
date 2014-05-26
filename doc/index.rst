@@ -72,8 +72,10 @@ for what is available so far.
 
 Work in Progress
 ===============================================================================
-.. lead:: Bootstrap RST is work in progress. We report here what has been done
-          so far, what needs to be done and what is not relevant.
+.. lead::
+
+   Bootstrap RST is work in progress. We report here what has been done
+   so far, what needs to be done and what is not relevant.
 .. ----------------------------------------------------------------------------
 
 
@@ -312,8 +314,8 @@ groups, navigation, alerts, and much more.
 
       :h4:`Thumbnails`
 
-      .. progress:: 25%
-         :type: danger
+      .. progress:: 100%
+         :type: success
       See `thumbnails <components.html#thumbnails>`_
    .. -------------------------------------------------------------------------
    .. column::

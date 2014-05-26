@@ -10,7 +10,6 @@ Use any of the available button classes to quickly create a styled button.
 
    .. button:: Default
       :type: default
-      :target: Options_
 
    .. button:: Primary
       :type: primary

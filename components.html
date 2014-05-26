@@ -45,9 +45,24 @@ dropdowns, input groups, navigation, alerts, and much more.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#badges" id="id11">Badges</a></li>
-<li><a class="reference internal" href="#alerts" id="id12">Alerts</a><ul>
-<li><a class="reference internal" href="#id4" id="id13">Examples</a></li>
-<li><a class="reference internal" href="#dismissable-alerts" id="id14">Dismissable alerts</a></li>
+<li><a class="reference internal" href="#thumbnails" id="id12">Thumbnails</a><ul>
+<li><a class="reference internal" href="#default-example" id="id13">Default example</a></li>
+<li><a class="reference internal" href="#custom-content" id="id14">Custom content</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alerts" id="id15">Alerts</a><ul>
+<li><a class="reference internal" href="#id4" id="id16">Examples</a></li>
+<li><a class="reference internal" href="#dismissable-alerts" id="id17">Dismissable alerts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#panels" id="id18">Panels</a><ul>
+<li><a class="reference internal" href="#basic-example" id="id19">Basic example</a></li>
+<li><a class="reference internal" href="#panel-with-heading" id="id20">Panel with heading</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wells" id="id21">Wells</a><ul>
+<li><a class="reference internal" href="#default-well" id="id22">Default well</a></li>
+<li><a class="reference internal" href="#optional-classes" id="id23">Optional classes</a></li>
 </ul>
 </li>
 </ul>
@@ -362,6 +377,125 @@ to links, Bootstrap navs, and more.</div>
 <p>When there are no new or unread items, badges will simply collapse (via CSS's
 <code>:empty</code> selector) provided no content exists within.</p>
 </div>
+<div class="section" id="thumbnails">
+<h1>Thumbnails</h1>
+<div class="lead">
+Extend Bootstrap's grid system with the thumbnail component to easily
+display grids of images, videos, text, and more.</div>
+<div class="section" id="default-example">
+<h2>Default example</h2>
+<p>By default, Bootstrap's thumbnails are designed to showcase linked images with
+minimal required markup.</p>
+<div class="bs-example">
+<div class="row">
+<div class="col-md-3">
+<img alt="171x180.png" class="thumbnail" src="171x180.png" />
+</div>
+<div class="col-md-3">
+<img alt="171x180.png" class="thumbnail" src="171x180.png" />
+</div>
+<div class="col-md-3">
+<img alt="171x180.png" class="thumbnail" src="171x180.png" />
+</div>
+<div class="col-md-3">
+<img alt="171x180.png" class="thumbnail" src="171x180.png" />
+</div>
+</div>
+</div>
+<pre class="code highlight literal-block">
+   .. column::
+      :width: 3
+
+      .. image:: 171x180.png
+         :class: thumbnail
+
+   .. column::
+      :width: 3
+
+      .. image:: 171x180.png
+         :class: thumbnail
+
+   .. column::
+      :width: 3
+
+      .. image:: 171x180.png
+         :class: thumbnail
+
+   .. column::
+      :width: 3
+
+      .. image:: 171x180.png
+         :class: thumbnail
+</pre>
+</div>
+<div class="section" id="custom-content">
+<h2>Custom content</h2>
+<p>With a bit of extra markup, it's possible to add any kind of HTML content like
+headings, paragraphs, or buttons into thumbnails.</p>
+<div class="bs-example">
+<div class="row">
+<div class="col-md-4">
+<div class="thumbnail">
+<img alt="300x200.png" src="300x200.png" />
+<div class="caption">
+<p><h3>Thumbnail label</h3></p>
+<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec
+id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
+ultricies vehicula ut id elit.</p>
+<button class="btn btn-primary "  type="button">Button</button>
+<button class="btn btn-default "  type="button">Button</button>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<img alt="300x200.png" src="300x200.png" />
+<div class="caption">
+<p><h3>Thumbnail label</h3></p>
+<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec
+id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
+ultricies vehicula ut id elit.</p>
+<button class="btn btn-primary "  type="button">Button</button>
+<button class="btn btn-default "  type="button">Button</button>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<img alt="300x200.png" src="300x200.png" />
+<div class="caption">
+<p><h3>Thumbnail label</h3></p>
+<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec
+id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
+ultricies vehicula ut id elit.</p>
+<button class="btn btn-primary "  type="button">Button</button>
+<button class="btn btn-default "  type="button">Button</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<pre class="code highlight literal-block">
+.. thumbnail::
+
+   .. image:: 300x200.png
+
+   .. caption::
+
+      :h3:`Thumbnail label`
+
+      Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec
+      id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
+      ultricies vehicula ut id elit.
+
+      .. button:: Button
+         :type: primary
+
+      .. button:: Button
+         :type: default
+</pre>
+</div>
+</div>
 <div class="section" id="alerts">
 <h1>Alerts</h1>
 <div class="lead">
@@ -412,6 +546,57 @@ via contextual class. Choose from success, info, warning, or danger.</div>
 <h4>Ensure proper behavior across all devices</h4>
 Be sure to use the <code>&lt;button&gt;</code> element with the <code>data-dismiss=&quot;alert&quot;</code> data
 attribute.</div>
+</div>
+</div>
+<div class="section" id="panels">
+<h1>Panels</h1>
+<div class="lead">
+While not always necessary, sometimes you need to put your DOM in a
+box. For those situations, try the panel component.</div>
+<div class="section" id="basic-example">
+<h2>Basic example</h2>
+<p>By default, all the <code>.panel</code> does is apply some basic border and padding to
+contain some content.</p>
+</div>
+<div class="section" id="panel-with-heading">
+<h2>Panel with heading</h2>
+<p>Easily add a heading container to your panel with .panel-heading. You may also
+include any &lt;h1&gt;-&lt;h6&gt; with a .panel-title class to add a pre-styled heading.</p>
+</div>
+</div>
+<div class="section" id="wells">
+<h1>Wells</h1>
+<div class="section" id="default-well">
+<h2>Default well</h2>
+<p>Use the well as a simple effect on an element to give it an inset effect.</p>
+<div class="bs-example">
+<p class="well">Look, I'm in a well!</p>
+</div>
+<pre class="code highlight literal-block">
+.. class:: well
+
+   Look, I'm in a well!
+</pre>
+</div>
+<div class="section" id="optional-classes">
+<h2>Optional classes</h2>
+<p>Control padding and rounded corners with two optional modifier classes.</p>
+<div class="bs-example">
+<p class="well well-lg">Look, I'm in a well!</p>
+</div>
+<pre class="code highlight literal-block">
+.. class:: well well-lg
+
+   Look, I'm in a well!
+</pre>
+<div class="bs-example">
+<p class="well well-sm">Look, I'm in a well!</p>
+</div>
+<pre class="code highlight literal-block">
+.. class:: well well-sm
+
+   Look, I'm in a well!
+</pre>
 </div>
 </div>
 </div>

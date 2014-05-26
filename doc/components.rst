@@ -55,4 +55,7 @@
 .. include:: components-glyphicons.txt
 .. include:: components-labels.txt
 .. include:: components-badges.txt
+.. include:: components-thumbnails.txt
 .. include:: components-alerts.txt
+.. include:: components-panels.txt
+.. include:: components-wells.txt

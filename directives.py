@@ -5,6 +5,7 @@
 # Distributed under the (new) BSD License. See LICENSE.txt for more info.
 # -----------------------------------------------------------------------------
 from docutils import nodes
+from docutils.parsers.rst.directives.body import BasePseudoSection
 from docutils.parsers.rst import Directive, directives, states, roles
 from docutils.parsers.rst.roles import set_classes
 from docutils.nodes import fully_normalize_name, whitespace_normalize_name
@@ -15,10 +16,6 @@ class button(nodes.Inline, nodes.Element): pass
 class progress(nodes.Inline, nodes.Element): pass
 class alert(nodes.General, nodes.Element): pass
 class callout(nodes.General, nodes.Element): pass
-class mute(nodes.General, nodes.Element): pass
-
-
-
 
 class Alert(Directive):
     required_arguments, optional_arguments = 0,0
@@ -72,49 +69,51 @@ class Callout(Directive):
 
 
 
+class Container(Directive):
+    optional_arguments = 1
+    final_argument_whitespace = True
+    option_spec = {'name': directives.unchanged}
+    has_content = True
+    default_class = None
+
+    def run(self):
+        self.assert_has_content()
+        text = '\n'.join(self.content)
+        try:
+            if self.arguments:
+                classes = directives.class_option(self.arguments[0])
+            else:
+                classes = self.default_class
+        except ValueError:
+            raise self.error(
+                'Invalid class attribute value for "%s" directive: "%s".'
+                % (self.name, self.arguments[0]))
+        node = nodes.container(text)
+        node['classes'].extend(classes)
+        self.add_name(node)
+        self.state.nested_parse(self.content, self.content_offset, node)
+        return [node]
+
+class Thumbnail(Container):
+    default_class = ['thumbnail']
+
+class Caption(Container):
+    default_class = ['caption']
+
+
+
 class Lead(Directive):
     required_arguments, optional_arguments = 0,0
     has_content = True
     option_spec = {'class':  directives.class_option }
-
     def run(self):
-        # Raise an error if the directive does not have contents.
         self.assert_has_content()
         text = '\n'.join(self.content)
-
-        # Create the node, to be populated by `nested_parse`.
         node = nodes.container(text, **self.options)
         node['classes'] = ['lead']
         node['classes'] += self.options.get('class', [])
-
-        # Parse the directive contents.
         self.state.nested_parse(self.content, self.content_offset, node)
         return [node]
-
-
-# class List(Directive):
-#     required_arguments, optional_arguments = 0,1
-#     has_content = True
-#     final_argument_whitespace = True
-
-#     # option_spec = {'class':  directives.class_option}
-#     def run(self):
-#         # Raise an error if the directive does not have contents.
-#         self.assert_has_content()
-#         text = '\n'.join(self.content)
-
-#         # Create the node, to be populated by `nested_parse`.
-#         # node = nodes.container(text, **self.options)
-#         node = mute(text, **self.options)
-#         node['classes'] += self.options.get('class', [])
-#         if self.arguments:
-#             node['list-class'] = self.arguments
-#         # Parse the directive contents.
-#         self.state.nested_parse(self.content, self.content_offset, node)
-#         return [node]
-
-
-
 
 
 class Paragraph(Directive):
@@ -320,11 +319,13 @@ class Footer(Directive):
         return []
 
 
+directives.register_directive('thumbnail', Thumbnail)
+directives.register_directive('caption', Caption)
 
+directives.register_directive('lead', Lead)
 directives.register_directive('progress', Progress)
 directives.register_directive('alert', Alert)
 directives.register_directive('callout', Callout)
-directives.register_directive('lead', Lead)
 directives.register_directive('row', PageRow)
 directives.register_directive('column', PageColumn)
 directives.register_directive('button', Button)
