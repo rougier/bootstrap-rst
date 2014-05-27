@@ -72,10 +72,8 @@ for what is available so far.
 
 Work in Progress
 ===============================================================================
-.. lead::
-
-   Bootstrap RST is work in progress. We report here what has been done
-   so far, what needs to be done and what is not relevant.
+.. lead:: Bootstrap RST is work in progress. We report here what has been done
+          so far, what needs to be done and what is not relevant.
 .. ----------------------------------------------------------------------------
 
 
@@ -123,8 +121,8 @@ extensible classes, and an advanced grid system.
 
       :h4:`Tables`
 
-      .. progress:: 90%
-         :type: warning
+      .. progress:: 100%
+         :type: success
 
       See `tables <CSS.html#tables>`_
    .. -------------------------------------------------------------------------
@@ -153,8 +151,8 @@ extensible classes, and an advanced grid system.
 
       :h4:`Images`
 
-      .. progress:: 75%
-         :type: warning
+      .. progress:: 100%
+         :type: success
       See `images <CSS.html#images>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -250,8 +248,8 @@ groups, navigation, alerts, and much more.
 
       :h4:`Breadcrumbs`
 
-      .. progress:: 25%
-         :type: danger
+      .. progress:: 100%
+         :type: success
       See `breadcrumbs <components.html#breadcrumbs>`_
    .. -------------------------------------------------------------------------
 

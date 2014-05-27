@@ -58,4 +58,5 @@
 .. include:: CSS-code.txt
 .. include:: CSS-tables.txt
 .. include:: CSS-buttons.txt
+.. include:: CSS-images.txt
 .. include:: CSS-helpers.txt

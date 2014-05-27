@@ -433,7 +433,7 @@ like default <dl>s, but when the navbar expands, so do these.
        Etiam porta sem malesuada magna mollis euismod.
 
 
-.. admonition:: :h4:`Autor-truncating`
+.. admonition:: :h4:`Auto-truncating`
    :class: bs-callout bs-callout-info
 
    Horizontal description lists will truncate terms that are too long to fit in

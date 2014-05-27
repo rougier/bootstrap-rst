@@ -47,8 +47,7 @@ Use `table-striped` to add zebra-striping to any table row within the `<tbody>`.
 
 .. container:: bs-example
 
-   .. table::
-      :class: table-striped
+   .. class:: table-striped
 
       = ========== ========= ========
       # First Name Last Name Username
@@ -61,8 +60,7 @@ Use `table-striped` to add zebra-striping to any table row within the `<tbody>`.
 .. code::
    :class: highlight
 
-   .. table::
-      :class: table-striped
+   .. class:: table-striped
 
       = ========== ========= ========
       # First Name Last Name Username
@@ -79,8 +77,7 @@ Add `table-bordered` for borders on all sides of the table and cells.
 
 .. container:: bs-example
 
-   .. table::
-      :class: table-bordered table-striped
+   .. class:: table-bordered table-striped
 
       = ========== ========= ========
       # First Name Last Name Username
@@ -93,8 +90,7 @@ Add `table-bordered` for borders on all sides of the table and cells.
 .. code::
    :class: highlight
 
-   .. table::
-      :class: table-bordered table-striped
+   .. class:: table-bordered table-striped
 
       = ========== ========= ========
       # First Name Last Name Username
@@ -111,8 +107,7 @@ Add `table-hover` to enable a hover state on table rows within a `<tbody>`.
 
 .. container:: bs-example
 
-   .. table::
-      :class: table-hover
+   .. class:: table-hover
 
       = ========== ========= ========
       # First Name Last Name Username
@@ -125,8 +120,7 @@ Add `table-hover` to enable a hover state on table rows within a `<tbody>`.
 .. code::
    :class: highlight
 
-   .. table::
-      :class: table-hover
+   .. class:: table-hover
 
       = ========== ========= ========
       # First Name Last Name Username
@@ -144,8 +138,7 @@ Add `table-condensed` to make tables more compact by cutting cell padding in hal
 
 .. container:: bs-example
 
-   .. table::
-      :class: table-condensed
+   .. class:: table-condensed
 
       = ========== ========= ========
       # First Name Last Name Username
@@ -158,8 +151,7 @@ Add `table-condensed` to make tables more compact by cutting cell padding in hal
 .. code::
    :class: highlight
 
-   .. table::
-      :class: table-condensed
+   .. class:: table-condensed
 
       = ========== ========= ========
       # First Name Last Name Username
@@ -172,23 +164,92 @@ Add `table-condensed` to make tables more compact by cutting cell padding in hal
 Contextual classes
 ------------------
 
-:text-muted:`N/A`
+Use contextual classes to color table rows or individual cells.
 
-.. list-table::
-   :widths: 20 20 20 20
-   :class: table
+.. container:: bs-example
 
-   * - #
-     - Column heading
-     - Column heading
-     - Column heading
+   .. list-table::
+      :widths: 10 30 30 30
 
-   * .. class:: active
+      * - #
+        - Column heading
+        - Column heading
+        - Column heading
 
-        - 1
-        - Column content
-        - Column content
-        - Column content
+      * .. class:: active
+
+           - 1
+           - Column content
+           - Column content
+           - Column content
+
+      * - 2
+        - Column heading
+        - Column heading
+        - Column heading
+
+      * .. class:: success
+
+           - 3
+           - Column content
+           - Column content
+           - Column content
+
+      * - 4
+        - Column heading
+        - Column heading
+        - Column heading
+
+      * .. class:: warning
+
+           - 5
+           - Column content
+           - Column content
+           - Column content
+
+      * - 6
+        - Column heading
+        - Column heading
+        - Column heading
+
+
+      * .. class:: danger
+
+           - 7
+           - Column content
+           - Column content
+           - Column content
+
+      * - 8
+        - Column heading
+        - Column heading
+        - Column heading
+
+
+      * .. class:: info
+
+           - 9
+           - Column content
+           - Column content
+           - Column content
+
+.. code::
+   :class: highlight
+
+   .. list-table::
+      :widths: 10 30 30 30
+
+      * - #
+        - Column heading
+        - Column heading
+        - Column heading
+
+      * .. class:: active
+
+           - 1
+           - Column content
+           - Column content
+           - Column content
 
 
 
@@ -205,8 +266,7 @@ tables.
 
    .. container:: table-responsive
 
-      .. table::
-         :class: table-bordered table-striped
+      .. class:: table-bordered table-striped
 
          = ============= ============= ============= ============= =============
          # Table heading Table heading Table heading Table heading Table heading
@@ -221,8 +281,7 @@ tables.
 
    .. container:: table-responsive
 
-      .. table::
-         :class: table-bordered table-striped
+      .. class:: table-bordered table-striped
 
          = ============= ============= ============= ============= =============
          # Table heading Table heading Table heading Table heading Table heading

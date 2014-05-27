@@ -39,30 +39,26 @@ dropdowns, input groups, navigation, alerts, and much more.</p>
 <li><a class="reference internal" href="#how-to-use" id="id7">How to use</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#labels" id="id8">Labels</a><ul>
-<li><a class="reference internal" href="#id3" id="id9">Examples</a></li>
-<li><a class="reference internal" href="#available-variations" id="id10">Available variations</a></li>
+<li><a class="reference internal" href="#breadcrumbs" id="id8">Breadcrumbs</a></li>
+<li><a class="reference internal" href="#labels" id="id9">Labels</a><ul>
+<li><a class="reference internal" href="#id3" id="id10">Examples</a></li>
+<li><a class="reference internal" href="#available-variations" id="id11">Available variations</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#badges" id="id11">Badges</a></li>
-<li><a class="reference internal" href="#thumbnails" id="id12">Thumbnails</a><ul>
-<li><a class="reference internal" href="#default-example" id="id13">Default example</a></li>
-<li><a class="reference internal" href="#custom-content" id="id14">Custom content</a></li>
+<li><a class="reference internal" href="#badges" id="id12">Badges</a></li>
+<li><a class="reference internal" href="#thumbnails" id="id13">Thumbnails</a><ul>
+<li><a class="reference internal" href="#default-example" id="id14">Default example</a></li>
+<li><a class="reference internal" href="#custom-content" id="id15">Custom content</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#alerts" id="id15">Alerts</a><ul>
-<li><a class="reference internal" href="#id4" id="id16">Examples</a></li>
-<li><a class="reference internal" href="#dismissable-alerts" id="id17">Dismissable alerts</a></li>
+<li><a class="reference internal" href="#alerts" id="id16">Alerts</a><ul>
+<li><a class="reference internal" href="#id4" id="id17">Examples</a></li>
+<li><a class="reference internal" href="#dismissable-alerts" id="id18">Dismissable alerts</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#panels" id="id18">Panels</a><ul>
-<li><a class="reference internal" href="#basic-example" id="id19">Basic example</a></li>
-<li><a class="reference internal" href="#panel-with-heading" id="id20">Panel with heading</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#wells" id="id21">Wells</a><ul>
-<li><a class="reference internal" href="#default-well" id="id22">Default well</a></li>
-<li><a class="reference internal" href="#optional-classes" id="id23">Optional classes</a></li>
+<li><a class="reference internal" href="#wells" id="id19">Wells</a><ul>
+<li><a class="reference internal" href="#default-well" id="id20">Default well</a></li>
+<li><a class="reference internal" href="#optional-classes" id="id21">Optional classes</a></li>
 </ul>
 </li>
 </ul>
@@ -315,6 +311,42 @@ nested <code>&lt;span&gt;</code> and apply the icon classes to the <code>&lt;spa
 </pre>
 </div>
 </div>
+<div class="section" id="breadcrumbs">
+<h1>Breadcrumbs</h1>
+<div class="lead">
+Indicate the current page's location within a navigational hierarchy.</div>
+<p>Separators are automatically added in CSS through <code>:before</code> and <code>content.</code></p>
+<div class="bs-example">
+<ul class="breadcrumb simple">
+<li>Home</li>
+</ul>
+<ul class="breadcrumb simple">
+<li>Home</li>
+<li>Library</li>
+</ul>
+<ul class="breadcrumb simple">
+<li>Home</li>
+<li>Library</li>
+<li>Data</li>
+</ul>
+</div>
+<pre class="code highlight literal-block">
+.. class:: breadcrumb
+
+   * Home
+
+.. class:: breadcrumb
+
+   * Home
+   * Library
+
+.. class:: breadcrumb
+
+   * Home
+   * Library
+   * Data
+</pre>
+</div>
 <div class="section" id="labels">
 <h1>Labels</h1>
 <div class="section" id="id3">
@@ -546,22 +578,6 @@ via contextual class. Choose from success, info, warning, or danger.</div>
 <h4>Ensure proper behavior across all devices</h4>
 Be sure to use the <code>&lt;button&gt;</code> element with the <code>data-dismiss=&quot;alert&quot;</code> data
 attribute.</div>
-</div>
-</div>
-<div class="section" id="panels">
-<h1>Panels</h1>
-<div class="lead">
-While not always necessary, sometimes you need to put your DOM in a
-box. For those situations, try the panel component.</div>
-<div class="section" id="basic-example">
-<h2>Basic example</h2>
-<p>By default, all the <code>.panel</code> does is apply some basic border and padding to
-contain some content.</p>
-</div>
-<div class="section" id="panel-with-heading">
-<h2>Panel with heading</h2>
-<p>Easily add a heading container to your panel with .panel-heading. You may also
-include any &lt;h1&gt;-&lt;h6&gt; with a .panel-title class to add a pre-styled heading.</p>
 </div>
 </div>
 <div class="section" id="wells">

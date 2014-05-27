@@ -82,9 +82,14 @@ simple template.</p>
 <li><a class="reference internal" href="#disabled-state" id="id38">Disabled state</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#helper-classes" id="id39">Helper classes</a><ul>
-<li><a class="reference internal" href="#contextual-colors" id="id40">Contextual colors</a></li>
-<li><a class="reference internal" href="#contextual-background" id="id41">Contextual background</a></li>
+<li><a class="reference internal" href="#images" id="id39">Images</a><ul>
+<li><a class="reference internal" href="#responsive-images" id="id40">Responsive images</a></li>
+<li><a class="reference internal" href="#image-shapes" id="id41">Image shapes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#helper-classes" id="id42">Helper classes</a><ul>
+<li><a class="reference internal" href="#contextual-colors" id="id43">Contextual colors</a></li>
+<li><a class="reference internal" href="#contextual-background" id="id44">Contextual background</a></li>
 </ul>
 </li>
 </ul>
@@ -755,7 +760,7 @@ Donec id elit non mi porta gravida at eget metus.</dd>
     Etiam porta sem malesuada magna mollis euismod.
 </pre>
 <div class="bs-callout bs-callout-info admonition">
-<p class="first admonition-title"><h4>Autor-truncating</h4></p>
+<p class="first admonition-title"><h4>Auto-truncating</h4></p>
 <p class="last">Horizontal description lists will truncate terms that are too long to fit in
 the left column with <code>text-overflow</code>. In narrower viewports, they will change
 to the default stacked layout.</p>
@@ -891,8 +896,7 @@ available in Internet Explorer 8.</div>
 </table>
 </div>
 <pre class="code highlight literal-block">
-.. table::
-   :class: table-striped
+.. class:: table-striped
 
    = ========== ========= ========
    # First Name Last Name Username
@@ -941,8 +945,7 @@ available in Internet Explorer 8.</div>
 </table>
 </div>
 <pre class="code highlight literal-block">
-.. table::
-   :class: table-bordered table-striped
+.. class:: table-bordered table-striped
 
    = ========== ========= ========
    # First Name Last Name Username
@@ -991,8 +994,7 @@ available in Internet Explorer 8.</div>
 </table>
 </div>
 <pre class="code highlight literal-block">
-.. table::
-   :class: table-hover
+.. class:: table-hover
 
    = ========== ========= ========
    # First Name Last Name Username
@@ -1041,8 +1043,7 @@ available in Internet Explorer 8.</div>
 </table>
 </div>
 <pre class="code highlight literal-block">
-.. table::
-   :class: table-condensed
+.. class:: table-condensed
 
    = ========== ========= ========
    # First Name Last Name Username
@@ -1055,13 +1056,14 @@ available in Internet Explorer 8.</div>
 </div>
 <div class="section" id="contextual-classes">
 <h2>Contextual classes</h2>
-<p><span class="text-muted">N/A</span></p>
+<p>Use contextual classes to color table rows or individual cells.</p>
+<div class="bs-example">
 <table class="table">
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col width="10%" />
+<col width="30%" />
+<col width="30%" />
+<col width="30%" />
 </colgroup>
 <tbody valign="top">
 <tr><td>#</td>
@@ -1069,13 +1071,70 @@ available in Internet Explorer 8.</div>
 <td>Column heading</td>
 <td>Column heading</td>
 </tr>
-<tr><td>1</td>
+<tr class="active"><td>1</td>
+<td>Column content</td>
+<td>Column content</td>
+<td>Column content</td>
+</tr>
+<tr><td>2</td>
+<td>Column heading</td>
+<td>Column heading</td>
+<td>Column heading</td>
+</tr>
+<tr class="success"><td>3</td>
+<td>Column content</td>
+<td>Column content</td>
+<td>Column content</td>
+</tr>
+<tr><td>4</td>
+<td>Column heading</td>
+<td>Column heading</td>
+<td>Column heading</td>
+</tr>
+<tr class="warning"><td>5</td>
+<td>Column content</td>
+<td>Column content</td>
+<td>Column content</td>
+</tr>
+<tr><td>6</td>
+<td>Column heading</td>
+<td>Column heading</td>
+<td>Column heading</td>
+</tr>
+<tr class="danger"><td>7</td>
+<td>Column content</td>
+<td>Column content</td>
+<td>Column content</td>
+</tr>
+<tr><td>8</td>
+<td>Column heading</td>
+<td>Column heading</td>
+<td>Column heading</td>
+</tr>
+<tr class="info"><td>9</td>
 <td>Column content</td>
 <td>Column content</td>
 <td>Column content</td>
 </tr>
 </tbody>
 </table>
+</div>
+<pre class="code highlight literal-block">
+.. list-table::
+   :widths: 10 30 30 30
+
+   * - #
+     - Column heading
+     - Column heading
+     - Column heading
+
+   * .. class:: active
+
+        - 1
+        - Column content
+        - Column content
+        - Column content
+</pre>
 </div>
 <div class="section" id="responsive-tables">
 <h2>Responsive tables</h2>
@@ -1132,8 +1191,7 @@ tables.</p>
 <pre class="code highlight literal-block">
 .. container:: table-responsive
 
-   .. table::
-      :class: table-bordered table-striped
+   .. class:: table-bordered table-striped
 
       = ============= ============= ============= ============= =============
       # Table heading Table heading Table heading Table heading Table heading
@@ -1151,7 +1209,7 @@ tables.</p>
 <h2>Options</h2>
 <p>Use any of the available button classes to quickly create a styled button.</p>
 <div class="bs-example">
-<a href="Options_" class="btn btn-default "  role="button">Default</a>
+<button class="btn btn-default "  type="button">Default</button>
 <button class="btn btn-primary "  type="button">Primary</button>
 <button class="btn btn-success "  type="button">Success</button>
 <button class="btn btn-info "  type="button">Info</button>
@@ -1293,6 +1351,41 @@ option.</p>
    :type: default
    :size: large
    :disabled:
+</pre>
+</div>
+</div>
+<div class="section" id="images">
+<h1>Images</h1>
+<div class="section" id="responsive-images">
+<h2>Responsive images</h2>
+<p>Images in Bootstrap 3 can be made responsive-friendly via the addition of the
+.img-responsive class. This applies max-width: 100%; and height: auto; to the
+image so that it scales nicely to the parent element.</p>
+<pre class="code literal-block">
+.. image:: image.png
+   :class: img-responsive
+</pre>
+</div>
+<div class="section" id="image-shapes">
+<h2>Image shapes</h2>
+<p>Add classes to an <code>&lt;img&gt;</code> element to easily style images in any project.</p>
+<div class="bs-callout bs-callout-danger">
+<h4>Cross-browser compatibility</h4>
+Keep in mind that Internet Explorer 8 lacks support for rounded corners.</div>
+<div class="bs-example">
+<img alt="140x140.png" class="img-rounded" src="140x140.png" />
+<img alt="140x140.png" class="img-circle" src="140x140.png" />
+<img alt="140x140.png" class="img-thumbnail" src="140x140.png" />
+</div>
+<pre class="code highlight literal-block">
+.. image:: 140x140.png
+   :class: img-rounded
+
+.. image:: 140x140.png
+   :class: img-circle
+
+.. image:: 140x140.png
+   :class: img-thumbnail
 </pre>
 </div>
 </div>
