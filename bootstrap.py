@@ -6,7 +6,6 @@
 # Distributed under the (new) BSD License. See LICENSE.txt for more info.
 # -----------------------------------------------------------------------------
 import sys, os, re
-
 from docutils import nodes, utils
 from docutils.parsers.rst.directives import images
 from docutils.transforms import TransformError, Transform, parts
@@ -56,7 +55,6 @@ class HTMLTranslator(html4css1.HTMLTranslator):
         self.body.append('<h6>%s</h6>' % node.children[0])
         raise nodes.SkipNode
 
-
     def visit_label_default(self, node):
         self.body.append(
             '<span class="label label-default">%s</span>' % node.children[0])
@@ -98,27 +96,6 @@ class HTMLTranslator(html4css1.HTMLTranslator):
 
     def depart_page_column(self, node):
         self.body.append('</div>\n')
-
-
-
-    def visit_panel(self, node):
-
-        # self.body.append(self.starttag(node, 'div', CLASS='panel'))
-        # if node['header']:
-        #     self.body.append('<div class = "panel-heading">\n')
-        #     self.body.append(node['header'] + '\n')
-        #     self.body.append('</div>\n')
-        # self.body.append('<div class="panel-body">')
-        pass
-
-    def depart_panel(self, node):
-        # self.body.append('</div>\n')
-        # if node['footer']:
-        #     self.body.append('<div class = "panel-footer">\n')
-        #     self.body.append(node['footer'] + '\n')
-        #     self.body.append('</div>\n')
-        # self.body.append('</div>\n')
-        pass
 
 
     def visit_button(self, node):
@@ -164,15 +141,14 @@ class HTMLTranslator(html4css1.HTMLTranslator):
             button = '<button class="%s" %s>' % (classes,properties)
             self.body.append(button)
 
-
     def depart_button(self, node):
         if node['target']:
             self.body.append('</a>\n')
         else:
             self.body.append('</button>\n')
 
-    def visit_progress(self, node):
 
+    def visit_progress(self, node):
         prg_classes = { 'success' : 'progress-bar-success',
                         'info'    : 'progress-bar-info',
                         'warning' : 'progress-bar-warning',
@@ -219,11 +195,6 @@ class HTMLTranslator(html4css1.HTMLTranslator):
         self.body.append('</div>\n')
 
 
-    # def visit_mute(self, node):
-    #     pass
-
-    # def depart_mute(self, node):
-    #     pass
 
     # overwritten
     def visit_definition_list(self, node):
@@ -268,9 +239,6 @@ class HTMLTranslator(html4css1.HTMLTranslator):
     # overwritten : removed 'container' class
     def visit_container(self, node):
         self.body.append(self.starttag(node, 'div', CLASS=''))
-
-    # def visit_header(self, node):
-    #     self.context.append(len(self.body))
 
     # overwritten: get rid of <hr> tag
     def depart_header(self, node):
