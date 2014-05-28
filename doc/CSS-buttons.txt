@@ -9,49 +9,48 @@ Use any of the available button classes to quickly create a styled button.
 .. container:: bs-example
 
    .. button:: Default
-      :type: default
 
    .. button:: Primary
-      :type: primary
+      :class: primary
 
    .. button:: Success
-      :type: success
+      :class: success
 
    .. button:: Info
-      :type: info
+      :class: info
 
    .. button:: Warning
-      :type: warning
+      :class: warning
 
    .. button:: Danger
-      :type: danger
+      :class: danger
 
    .. button:: Link
-      :type: link
+      :class: link
 
 .. code::
    :class: highlight
 
    .. button:: Default
-      :type: default
+      :class: default
 
    .. button:: Primary
-      :type: primary
+      :class: primary
 
    .. button:: Success
-      :type: success
+      :class: success
 
    .. button:: Info
-      :type: info
+      :class: info
 
    .. button:: Warning
-      :type: warning
+      :class: warning
 
    .. button:: Danger
-      :type: danger
+      :class: danger
 
    .. button:: Link
-      :type: link
+      :class: link
 
 
 Sizes
@@ -63,64 +62,55 @@ Fancy larger or smaller buttons? Add :code:`large`, :code:`small`, or
 .. container:: bs-example
 
    .. button:: Large button
-      :type: primary
-      :size: large
+      :class: primary large
    .. button:: Large button
-      :size: large
+      :class: large
 
    |
 
    .. button:: Default button
-      :type: primary
+      :class: primary
    .. button:: Default button
 
    |
 
    .. button:: Small button
-      :type: primary
-      :size: small
+      :class: primary small
    .. button:: Small button
-      :size: small
+      :class: small
 
    |
 
    .. button:: Tiny button
-      :type: primary
-      :size: tiny
+      :class: primary tiny
    .. button:: Tiny button
-      :size: tiny
+      :class: tiny
 
 .. code::
    :class: highlight
 
    .. button:: Large button
-      :type: primary
-      :size: large
+      :class: primary large
 
    .. button:: Large button
-      :size: large
+      :class: large
 
    .. button:: Default button
-      :type: primary
-      :size: default
+      :class: primary
 
    .. button:: Default button
-      :type: default
-      :size: default
 
    .. button:: Small button
-      :type: primary
-      :size: small
+      :class: primary small
 
    .. button:: Small button
-      :size: small
+      :class: small
 
    .. button:: Tiny button
-      :type: primary
-      :size: tiny
+      :class: primary tiny
 
    .. button:: Tiny button
-      :size: tiny
+      :class: tiny
 
 Create block level buttons—those that span the full width of a parent by adding
 :code:`block`.
@@ -130,27 +120,19 @@ Create block level buttons—those that span the full width of a parent by addin
    .. container:: well
 
       .. button:: Block level button
-         :type: primary
-         :size: large
-         :block:
+         :class: primary large block
 
       .. button:: Block level button
-         :type: default
-         :size: large
-         :block:
+         :class: large block
 
 .. code::
    :class: highlight
 
    .. button:: Block level button
-      :type: primary
-      :size: large
-      :block:
+      :class: primary large block
 
    .. button:: Block level button
-      :type: default
-      :size: large
-      :block:
+      :class: large block
 
 
 Active state
@@ -161,28 +143,20 @@ shadow) when :code:`active`.
 .. container:: bs-example
 
    .. button:: Primary button
-      :type: primary
-      :size: large
-      :active:
+      :class: primary large active
 
    .. button:: Button
-      :type: default
-      :size: large
-      :active:
+      :class: large active
 
 
 .. code::
    :class: highlight
 
    .. button:: Primary button
-      :type: primary
-      :size: large
-      :active:
+      :class: primary large active
 
    .. button:: Button
-      :type: default
-      :size: large
-      :active:
+      :class: large active
 
 
 
@@ -195,25 +169,17 @@ option.
 .. container:: bs-example
 
    .. button:: Primary button
-      :type: primary
-      :size: large
-      :disabled:
+      :class: primary large disabled
 
    .. button:: Button
-      :type: default
-      :size: large
-      :disabled:
+      :class: large disabled
 
 
 .. code::
    :class: highlight
 
    .. button:: Primary button
-      :type: primary
-      :size: large
-      :disabled:
+      :class: primary large disabled
 
    .. button:: Button
-      :type: default
-      :size: large
-      :disabled:
+      :class: large disabled

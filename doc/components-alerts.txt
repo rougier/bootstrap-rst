@@ -4,6 +4,7 @@ Alerts
           the handful of available and flexible alert messages. For inline
           dismissal, use the `alerts jQuery plugin
           <http://getbootstrap.com/javascript/>`_.
+.. ----------------------------------------------------------------------------
 
 Examples
 --------

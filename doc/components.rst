@@ -58,4 +58,5 @@
 .. include:: components-badges.txt
 .. include:: components-thumbnails.txt
 .. include:: components-alerts.txt
+.. include:: components-progress.txt
 .. include:: components-wells.txt

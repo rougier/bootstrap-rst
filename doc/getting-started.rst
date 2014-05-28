@@ -60,7 +60,7 @@ Download
 .. lead:: Bootstrap RST has a few easy ways to quickly get started, each one
           appealing to a different skill level and use case. Read through to
           see what suits your particular needs.
-
+.. ----------------------------------------------------------------------------
 
 
 .. row:: bs-downloads
@@ -75,8 +75,7 @@ Download
       source files are included.
 
       .. button:: Get Bootstrap RST
-         :type: outline
-         :size: large
+         :class: outline large
    .. -------------------------------------------------------------------------
    .. column::
       :width: 4
@@ -87,8 +86,7 @@ Download
       source files are included.
 
       .. button:: Download source
-         :type: outline
-         :size: large
+         :class: outline large
          :target: #
    .. -------------------------------------------------------------------------
    .. column::
@@ -100,8 +98,7 @@ Download
       source files are included.
 
       .. button:: Download Bootstrap
-         :type: outline
-         :size: large
+         :class: outline large
    .. -------------------------------------------------------------------------
 
 
@@ -118,8 +115,7 @@ Specifically, we support the latest versions of the following browsers and
 platforms. On Windows, we support Internet Explorer 8-11. More specific support
 information is provided below.
 
-.. table::
-   :class: table table-bordered table-striped
+.. class:: table table-bordered table-striped
 
    +----------+--------+-------------------+-------------------+----------+-------------------+
    |          | Chrome | Firefox           | Internet Explorer | Opera    | Safari            |
@@ -142,7 +138,7 @@ information is provided below.
    .. container:: btn-group
 
       .. button:: |caret| :sr-only:`Dropdown`
-         :toggle:
+         :class: toggle
 
       .. class:: dropdown-menu
 
@@ -155,7 +151,7 @@ information is provided below.
 
    .. button:: Default
    .. button:: |caret| :sr-only:`Dropdown`
-      :toggle:
+      :class: toggle
 
    .. class:: dropdown-menu
 

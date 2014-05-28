@@ -93,7 +93,7 @@ extensible classes, and an advanced grid system.
       :h4:`Grid system`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `grids <CSS.html#grid-system>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -102,7 +102,7 @@ extensible classes, and an advanced grid system.
       :h4:`Typography`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `typography <CSS.html#typography>`_
 
    .. -------------------------------------------------------------------------
@@ -112,7 +112,7 @@ extensible classes, and an advanced grid system.
       :h4:`Code`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `code <CSS.html#code>`_
 
    .. -------------------------------------------------------------------------
@@ -122,7 +122,7 @@ extensible classes, and an advanced grid system.
       :h4:`Tables`
 
       .. progress:: 100%
-         :type: success
+         :class: success
 
       See `tables <CSS.html#tables>`_
    .. -------------------------------------------------------------------------
@@ -143,7 +143,7 @@ extensible classes, and an advanced grid system.
       :h4:`Buttons`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `buttons <CSS.html#buttons>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -152,7 +152,7 @@ extensible classes, and an advanced grid system.
       :h4:`Images`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `images <CSS.html#images>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -161,7 +161,7 @@ extensible classes, and an advanced grid system.
       :h4:`Helper classes`
 
       .. progress:: 50%
-         :type: warning
+         :class: warning
 
       See `helper classes <CSS.html#helper-classes>`_
    .. -------------------------------------------------------------------------
@@ -184,7 +184,7 @@ groups, navigation, alerts, and much more.
       :h4:`Glyphicons`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `glyphicons <components.html#glyphicons>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -193,7 +193,7 @@ groups, navigation, alerts, and much more.
       :h4:`Dropdowns`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `dropdowns <components.html#dropdowns>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -202,7 +202,7 @@ groups, navigation, alerts, and much more.
       :h4:`Button groups`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `button groups <components.html#button-groups>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -211,7 +211,7 @@ groups, navigation, alerts, and much more.
       :h4:`Glyphicons`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `button dropdowns <components.html#button-dropdowns>`_
    .. -------------------------------------------------------------------------
 
@@ -231,7 +231,7 @@ groups, navigation, alerts, and much more.
       :h4:`Navs`
 
       .. progress:: 25%
-         :type: danger
+         :class: danger
       See `navs <components.html#navs>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -240,7 +240,7 @@ groups, navigation, alerts, and much more.
       :h4:`Navbar`
 
       .. progress:: 25%
-         :type: danger
+         :class: danger
       See `navbar <components.html#navbar>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -249,7 +249,7 @@ groups, navigation, alerts, and much more.
       :h4:`Breadcrumbs`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `breadcrumbs <components.html#breadcrumbs>`_
    .. -------------------------------------------------------------------------
 
@@ -263,7 +263,7 @@ groups, navigation, alerts, and much more.
       :h4:`Pagination`
 
       .. progress:: 25%
-         :type: danger
+         :class: danger
       See `pagination <components.html#pagination>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -272,7 +272,7 @@ groups, navigation, alerts, and much more.
       :h4:`Labels`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `labels <components.html#labels>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -281,7 +281,7 @@ groups, navigation, alerts, and much more.
       :h4:`Badges`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `badges <components.html#badges>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -290,7 +290,7 @@ groups, navigation, alerts, and much more.
       :h4:`Jumbotron`
 
       .. progress:: 25%
-         :type: danger
+         :class: danger
       See `jumbotron <components.html#jumbotron>`_
    .. -------------------------------------------------------------------------
 
@@ -304,7 +304,7 @@ groups, navigation, alerts, and much more.
       :h4:`Page header`
 
       .. progress:: 25%
-         :type: danger
+         :class: danger
       See `page header <components.html#page-header>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -313,7 +313,7 @@ groups, navigation, alerts, and much more.
       :h4:`Thumbnails`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `thumbnails <components.html#thumbnails>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -322,7 +322,7 @@ groups, navigation, alerts, and much more.
       :h4:`Alerts`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `alerts <components.html#alerts>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -331,7 +331,7 @@ groups, navigation, alerts, and much more.
       :h4:`Progress bars`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `progress bars <components.html#progress-bars>`_
    .. -------------------------------------------------------------------------
 
@@ -345,7 +345,7 @@ groups, navigation, alerts, and much more.
       :h4:`Media object`
 
       .. progress:: 25%
-         :type: danger
+         :class: danger
       See `media object <components.html#media-object>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -354,7 +354,7 @@ groups, navigation, alerts, and much more.
       :h4:`List group`
 
       .. progress:: 25%
-         :type: danger
+         :class: danger
       See `list group <components.html#list-group>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -363,7 +363,7 @@ groups, navigation, alerts, and much more.
       :h4:`Panels`
 
       .. progress:: 25%
-         :type: danger
+         :class: danger
       See `panels <components.html#panels>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -372,6 +372,6 @@ groups, navigation, alerts, and much more.
       :h4:`Wells`
 
       .. progress:: 100%
-         :type: success
+         :class: success
       See `wells <components.html#wells>`_
    .. -------------------------------------------------------------------------

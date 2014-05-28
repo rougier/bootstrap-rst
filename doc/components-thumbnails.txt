@@ -90,10 +90,9 @@ headings, paragraphs, or buttons into thumbnails.
                ultricies vehicula ut id elit.
 
                .. button:: Button
-                  :type: primary
+                  :class: primary
 
                .. button:: Button
-                  :type: default
 
 
       .. column::
@@ -112,10 +111,9 @@ headings, paragraphs, or buttons into thumbnails.
                ultricies vehicula ut id elit.
 
                .. button:: Button
-                  :type: primary
+                  :class: primary
 
                .. button:: Button
-                  :type: default
 
 
       .. column::
@@ -134,10 +132,9 @@ headings, paragraphs, or buttons into thumbnails.
                ultricies vehicula ut id elit.
 
                .. button:: Button
-                  :type: primary
+                  :class: primary
 
                .. button:: Button
-                  :type: default
 
 .. code::
    :class: highlight
@@ -155,7 +152,6 @@ headings, paragraphs, or buttons into thumbnails.
          ultricies vehicula ut id elit.
 
          .. button:: Button
-            :type: primary
+            :class: primary
 
          .. button:: Button
-            :type: default

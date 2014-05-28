@@ -1209,35 +1209,35 @@ tables.</p>
 <h2>Options</h2>
 <p>Use any of the available button classes to quickly create a styled button.</p>
 <div class="bs-example">
-<button class="btn btn-default "  type="button">Default</button>
+<button class="btn btn-default"  type="button">Default</button>
 <button class="btn btn-primary "  type="button">Primary</button>
 <button class="btn btn-success "  type="button">Success</button>
-<button class="btn btn-info "  type="button">Info</button>
-<button class="btn btn-warning "  type="button">Warning</button>
+<button class="btn btn-info btn-default"  type="button">Info</button>
+<button class="btn btn-warning btn-default"  type="button">Warning</button>
 <button class="btn btn-danger "  type="button">Danger</button>
 <button class="btn btn-link "  type="button">Link</button>
 </div>
 <pre class="code highlight literal-block">
 .. button:: Default
-   :type: default
+   :class: default
 
 .. button:: Primary
-   :type: primary
+   :class: primary
 
 .. button:: Success
-   :type: success
+   :class: success
 
 .. button:: Info
-   :type: info
+   :class: info
 
 .. button:: Warning
-   :type: warning
+   :class: warning
 
 .. button:: Danger
-   :type: danger
+   :class: danger
 
 .. button:: Link
-   :type: link
+   :class: link
 </pre>
 </div>
 <div class="section" id="sizes">
@@ -1245,72 +1245,62 @@ tables.</p>
 <p>Fancy larger or smaller buttons? Add <code>large</code>, <code>small</code>, or
 <code>tiny</code> for additional sizes.</p>
 <div class="bs-example">
-<button class="btn btn-primary btn-lg"  type="button">Large button</button>
-<button class="btn btn-default btn-lg"  type="button">Large button</button>
+<button class="btn btn-primary btn-lg "  type="button">Large button</button>
+<button class="btn btn-lg btn-default"  type="button">Large button</button>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <button class="btn btn-primary "  type="button">Default button</button>
-<button class="btn btn-default "  type="button">Default button</button>
+<button class="btn btn-default"  type="button">Default button</button>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<button class="btn btn-primary btn-sm"  type="button">Small button</button>
-<button class="btn btn-default btn-sm"  type="button">Small button</button>
+<button class="btn btn-primary btn-sm "  type="button">Small button</button>
+<button class="btn btn-sm btn-default"  type="button">Small button</button>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<button class="btn btn-primary btn-xs"  type="button">Tiny button</button>
-<button class="btn btn-default btn-xs"  type="button">Tiny button</button>
+<button class="btn btn-primary btn-xs "  type="button">Tiny button</button>
+<button class="btn btn-xs btn-default"  type="button">Tiny button</button>
 </div>
 <pre class="code highlight literal-block">
 .. button:: Large button
-   :type: primary
-   :size: large
+   :class: primary large
 
 .. button:: Large button
-   :size: large
+   :class: large
 
 .. button:: Default button
-   :type: primary
-   :size: default
+   :class: primary
 
 .. button:: Default button
-   :type: default
-   :size: default
 
 .. button:: Small button
-   :type: primary
-   :size: small
+   :class: primary small
 
 .. button:: Small button
-   :size: small
+   :class: small
 
 .. button:: Tiny button
-   :type: primary
-   :size: tiny
+   :class: primary tiny
 
 .. button:: Tiny button
-   :size: tiny
+   :class: tiny
 </pre>
 <p>Create block level buttons—those that span the full width of a parent by adding
 <code>block</code>.</p>
 <div class="bs-example">
 <div class="well">
-<button class="btn btn-primary btn-lg btn-block"  type="button">Block level button</button>
-<button class="btn btn-default btn-lg btn-block"  type="button">Block level button</button>
+<button class="btn btn-primary btn-lg btn-block "  type="button">Block level button</button>
+<button class="btn btn-lg btn-block btn-default"  type="button">Block level button</button>
 </div>
 </div>
 <pre class="code highlight literal-block">
 .. button:: Block level button
-   :type: primary
-   :size: large
-   :block:
+   :class: primary large block
 
 .. button:: Block level button
-   :type: default
-   :size: large
-   :block:
+   :class: large block
 </pre>
 </div>
 <div class="section" id="active-state">
@@ -1318,19 +1308,15 @@ tables.</p>
 <p>Buttons will appear pressed (with a darker background, darker border, and inset
 shadow) when <code>active</code>.</p>
 <div class="bs-example">
-<button class="btn btn-primary btn-lg active"  type="button">Primary button</button>
-<button class="btn btn-default btn-lg active"  type="button">Button</button>
+<button class="btn btn-primary btn-lg btn-active "  type="button">Primary button</button>
+<button class="btn btn-lg btn-active btn-default"  type="button">Button</button>
 </div>
 <pre class="code highlight literal-block">
 .. button:: Primary button
-   :type: primary
-   :size: large
-   :active:
+   :class: primary large active
 
 .. button:: Button
-   :type: default
-   :size: large
-   :active:
+   :class: large active
 </pre>
 </div>
 <div class="section" id="disabled-state">
@@ -1338,19 +1324,15 @@ shadow) when <code>active</code>.</p>
 <p>Make buttons look unclickable by fading them back 50% using the <code>disabled</code>
 option.</p>
 <div class="bs-example">
-<button class="btn btn-primary btn-lg disabled"  type="button">Primary button</button>
-<button class="btn btn-default btn-lg disabled"  type="button">Button</button>
+<button class="btn btn-primary btn-lg  disabled"  type="button">Primary button</button>
+<button class="btn btn-lg btn-default disabled"  type="button">Button</button>
 </div>
 <pre class="code highlight literal-block">
 .. button:: Primary button
-   :type: primary
-   :size: large
-   :disabled:
+   :class: primary large disabled
 
 .. button:: Button
-   :type: default
-   :size: large
-   :disabled:
+   :class: large disabled
 </pre>
 </div>
 </div>
@@ -1361,7 +1343,7 @@ option.</p>
 <p>Images in Bootstrap 3 can be made responsive-friendly via the addition of the
 .img-responsive class. This applies max-width: 100%; and height: auto; to the
 image so that it scales nicely to the parent element.</p>
-<pre class="code literal-block">
+<pre class="code highlight literal-block">
 .. image:: image.png
    :class: img-responsive
 </pre>

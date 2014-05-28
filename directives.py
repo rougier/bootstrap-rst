@@ -17,6 +17,8 @@ class progress(nodes.Inline, nodes.Element): pass
 class alert(nodes.General, nodes.Element): pass
 class callout(nodes.General, nodes.Element): pass
 
+
+
 class Alert(Directive):
     required_arguments, optional_arguments = 0,0
     has_content = True
@@ -207,40 +209,13 @@ class Button(Directive):
     required_arguments, optional_arguments = 0,0
     final_argument_whitespace = True
     has_content = True
-
-    def check_type(argument):
-        return directives.choice(argument,
-               ('default', 'primary', 'success', 'info',
-                'warning', 'danger', 'outline', 'link'))
-
-    def check_size(argument):
-        return directives.choice(argument,
-               ('default', 'large', 'small','tiny'))
-
-    def check_placement(argument):
-        return directives.choice(argument,
-               ('left', 'right', 'top','bottom'))
-
     option_spec = {'class'   : directives.class_option,
-                   'target'  : directives.unchanged_required,
-                   'type'    : check_type,
-                   'size'    : check_size,
-                   'active'  : directives.flag,
-                   'block'   : directives.flag,
-                   'toggle'  : directives.flag,
-                   'disabled': directives.flag }
+                   'target'  : directives.unchanged_required }
     def run(self):
         self.assert_has_content()
         node = button()
         node['target'] = self.options.get('target', None)
-
-        node['type'] = self.options.get('type', 'default')
-        node['size'] = self.options.get('size', 'default')
-        node['block'] = True if 'block' in self.options.keys() else False
-        node['toggle'] = True if 'toggle' in self.options.keys() else False
-        node['active'] = True if 'active' in self.options.keys() else False
-        node['disabled'] = True if 'disabled' in self.options.keys() else False
-
+        node['classes'] = self.options.get('class', [])
         self.state.nested_parse(self.content, self.content_offset, node)
         self.add_name(node)
         return [node]
@@ -256,30 +231,22 @@ class Progress(Directive):
     required_arguments, optional_arguments = 0,1
     final_argument_whitespace = True
     has_content = False
-    def check_type(argument):
-        return directives.choice(argument,
-               ('default', 'success', 'info', 'warning', 'danger', ))
-
-    option_spec = {'type'    : check_type,
-                   'class'   : directives.class_option,
-                   'label'   : directives.unchanged,
-                   'min'     : directives.unchanged_required,
-                   'max'     : directives.unchanged_required,
-                   'striped' : directives.flag,
-                   'animated': directives.flag}
+    option_spec = { 'class'   : directives.class_option,
+                    'label'   : directives.unchanged,
+                    'value'   : directives.unchanged_required,
+                    'min'     : directives.unchanged_required,
+                    'max'     : directives.unchanged_required }
     def run(self):
         node = progress()
-        node['type']      = self.options.get('type', 'default')
-        node['value_min'] = self.options.get('min_value', 0)
-        node['value_max'] = self.options.get('max_value', 100)
-        node['value']     = self.options.get('max_value', 50)
-        node['striped']   = True if 'striped' in self.options.keys() else False
-        node['animated']  = True if 'animated' in self.options.keys() else False
+        node['classes']   = self.options.get('class', '')
+        node['value_min'] = self.options.get('min_value', '0')
+        node['value_max'] = self.options.get('max_value', '100')
+        node['value']     = self.options.get('value', '50')
         node['label']     = self.options.get('label', '')
         if self.arguments:
-            node['value'] = int(self.arguments[0].rstrip(' %'))
-            if 'label' not in self.options:
-                node['label'] = self.arguments[0]
+            node['value'] = self.arguments[0].rstrip(' %')
+            #if 'label' not in self.options:
+            #    node['label'] = self.arguments[0]
         return [node]
 
 

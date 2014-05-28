@@ -122,43 +122,39 @@ class HTMLTranslator(html4css1.HTMLTranslator):
 
 
     def visit_button(self, node):
-        types = { 'default' : 'btn-default',  'primary' : 'btn-primary',
-                  'success' : 'btn-success',  'info'    : 'btn-info',
-                  'warning' : 'btn-warning',  'danger'  : 'btn-danger',
-                  'link'    : 'btn-link',      'outline' : 'btn-outline' }
-        sizes = { 'tiny'    : 'btn-xs',        'small'   : 'btn-sm',
-                  'default' : '',              'large'   : 'btn-lg' }
+        btn_classes = { 'primary' : 'btn-primary', 'success' : 'btn-success',
+                        'info'    : 'btn-info',    'warning' : 'btn-warning',
+                        'danger'  : 'btn-danger',  'link'    : 'btn-link',
+                        'outline' : 'btn-outline', 'tiny'    : 'btn-xs',
+                        'small'   : 'btn-sm',      'large'   : 'btn-lg',
+                        'block'   : 'btn-block',   'active'  : 'btn-active' }
+
+        classes = 'btn '
+        flag = False
+        for node_class in node['classes']:
+            if node_class in ['primary', 'success', 'warning'
+                              'info', 'link', 'danger', 'outline']:
+                flag = True
+            btn_class = btn_classes.get(node_class, None)
+            if btn_class:
+                classes += btn_class + ' '
+        if flag == False:
+            classes += 'btn-default'
 
         target = node['target']
-        classes = 'btn'
         properties = ''
 
-        # Type
-        classes += ' ' + types[node['type']]
-
-        # Size
-        classes += ' ' + sizes[node['size']]
-
-        # Active
-        if node['active']:
-            classes += ' active'
-
         # Disabled
-        if node['disabled']:
+        if 'disabled' in node['classes']:
             if target:
                 properties += ' disabled="disabled"'
             else:
                 classes += ' disabled'
 
-        # Active
-        if node['block']:
-            classes += ' btn-block'
-
         # Data toggle
-        if node['toggle']:
+        if 'toggle' in node['classes']:
             classes += ' dropdown-toggle '
             properties += ' data-toggle="dropdown"'
-
         if target:
             properties += ' role="button"'
             anchor = '<a href="%s" class="%s" %s>' % (target,classes,properties)
@@ -168,23 +164,6 @@ class HTMLTranslator(html4css1.HTMLTranslator):
             button = '<button class="%s" %s>' % (classes,properties)
             self.body.append(button)
 
-        #type = type_to_class.get(node['type'], 'btn-default')
-        #size = size_to_class.get(node['size'], 'default')
-        #active = 'active ' if node['active'] else ''
-        #block = 'btn-block' if node['block'] else ''
-        # toggle = 'data-toggle="dropdown"' if node['toggle'] else ''
-        #target = node.get('target', '')
-        # if len(target):
-        #     anchor = '<a href="%s" class="btn %s %s %s %s" role="button">'
-        #     if node['disabled']:
-        #         anchor = '<a href="%s" type="button" class="btn %s %s %s %s disabled">'
-        #     ref = '#'
-        #     self.body.append(anchor % (ref, type, size, active, block))
-        # else:
-        #     button = '<button type="button" class="btn %s %s %s %s">'
-        #     if node['disabled']:
-        #         button = '<button type="button" class="btn %s %s %s %s" disabled="disabled">'
-        #     self.body.append(button % (type, size, active, block))
 
     def depart_button(self, node):
         if node['target']:
@@ -194,17 +173,27 @@ class HTMLTranslator(html4css1.HTMLTranslator):
 
     def visit_progress(self, node):
 
+        prg_classes = { 'success' : 'progress-bar-success',
+                        'info'    : 'progress-bar-info',
+                        'warning' : 'progress-bar-warning',
+                        'danger'  : 'progress-bar-danger' }
+
         label = node['label']
-        classes = 'progress-bar '
-        classes += 'progress-bar-%s' %  node['type']
+        classes = 'progress-bar'
+        flag = False
+        for nodeclass in node['classes']:
+            flag = True
+            classes += ' ' + prg_classes.get(nodeclass, '')
+        if flag == False:
+            classes += ' progress-bar-default'
         properties = 'role="progress-bar"'
-        properties += ' aria-valuenow="%d"' % node['value']
-        properties += ' aria-valuemin="%d"' % node['value_min']
-        properties += ' aria-valuemax="%d"' % node['value_max']
-        properties += ' style="width: %d%%";' % node['value']
-        if node['animated']:
+        properties += ' aria-valuenow="%d"' % int(node['value'])
+        properties += ' aria-valuemin="%d"' % int(node['value_min'])
+        properties += ' aria-valuemax="%d"' % int(node['value_max'])
+        properties += ' style="width: %d%%";' % int(node['value'])
+        if 'active' in node['classes']:
             self.body.append('<div class="progress progress-striped active">')
-        elif node['striped']:
+        elif 'striped' in node['classes']:
             self.body.append('<div class="progress progress-striped">')
         else:
             self.body.append('<div class="progress">')

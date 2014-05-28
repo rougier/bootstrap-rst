@@ -56,9 +56,18 @@ dropdowns, input groups, navigation, alerts, and much more.</p>
 <li><a class="reference internal" href="#dismissable-alerts" id="id18">Dismissable alerts</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#wells" id="id19">Wells</a><ul>
-<li><a class="reference internal" href="#default-well" id="id20">Default well</a></li>
-<li><a class="reference internal" href="#optional-classes" id="id21">Optional classes</a></li>
+<li><a class="reference internal" href="#progress-bars" id="id19">Progress bars</a><ul>
+<li><a class="reference internal" href="#basic-example" id="id20">Basic example</a></li>
+<li><a class="reference internal" href="#with-label" id="id21">With label</a></li>
+<li><a class="reference internal" href="#contextual-alternatives" id="id22">Contextual alternatives</a></li>
+<li><a class="reference internal" href="#striped" id="id23">Striped</a></li>
+<li><a class="reference internal" href="#animated" id="id24">Animated</a></li>
+<li><a class="reference internal" href="#stacked" id="id25">Stacked</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wells" id="id26">Wells</a><ul>
+<li><a class="reference internal" href="#default-well" id="id27">Default well</a></li>
+<li><a class="reference internal" href="#optional-classes" id="id28">Optional classes</a></li>
 </ul>
 </li>
 </ul>
@@ -475,7 +484,7 @@ headings, paragraphs, or buttons into thumbnails.</p>
 id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
 ultricies vehicula ut id elit.</p>
 <button class="btn btn-primary "  type="button">Button</button>
-<button class="btn btn-default "  type="button">Button</button>
+<button class="btn btn-default"  type="button">Button</button>
 </div>
 </div>
 </div>
@@ -488,7 +497,7 @@ ultricies vehicula ut id elit.</p>
 id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
 ultricies vehicula ut id elit.</p>
 <button class="btn btn-primary "  type="button">Button</button>
-<button class="btn btn-default "  type="button">Button</button>
+<button class="btn btn-default"  type="button">Button</button>
 </div>
 </div>
 </div>
@@ -501,7 +510,7 @@ ultricies vehicula ut id elit.</p>
 id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
 ultricies vehicula ut id elit.</p>
 <button class="btn btn-primary "  type="button">Button</button>
-<button class="btn btn-default "  type="button">Button</button>
+<button class="btn btn-default"  type="button">Button</button>
 </div>
 </div>
 </div>
@@ -521,10 +530,9 @@ ultricies vehicula ut id elit.</p>
       ultricies vehicula ut id elit.
 
       .. button:: Button
-         :type: primary
+         :class: primary
 
       .. button:: Button
-         :type: default
 </pre>
 </div>
 </div>
@@ -578,6 +586,92 @@ via contextual class. Choose from success, info, warning, or danger.</div>
 <h4>Ensure proper behavior across all devices</h4>
 Be sure to use the <code>&lt;button&gt;</code> element with the <code>data-dismiss=&quot;alert&quot;</code> data
 attribute.</div>
+</div>
+</div>
+<div class="section" id="progress-bars">
+<h1>Progress bars</h1>
+<div class="lead">
+Provide up-to-date feedback on the progress of a workflow or action
+with simple yet flexible progress bars.</div>
+<div class="bs-callout bs-callout-danger">
+<h4>Cross-browser compatibility</h4>
+Progress bars use CSS3 transitions and animations to achieve some of their
+effects. These features are not supported in Internet Explorer 9 and below
+or older versions of Firefox. Opera 12 does not support animations.</div>
+<div class="section" id="basic-example">
+<h2>Basic example</h2>
+<p>Default progress bar.</p>
+<div class="bs-example">
+<div class="progress"><div class="progress-bar progress-bar-default" role="progress-bar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%";></div></div></div>
+<pre class="code highlight literal-block">
+.. progress:: 60%
+</pre>
+</div>
+<div class="section" id="with-label">
+<h2>With label</h2>
+<p>Remove the <code>.sr-only</code> class from within the progress bar to show a visible
+percentage. For low percentages, consider adding a <code>min-width</code> to ensure the
+label's text is fully visible.</p>
+<div class="bs-example">
+<div class="progress"><div class="progress-bar progress-bar-default" role="progress-bar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%";>60%</div></div></div>
+<pre class="code highlight literal-block">
+.. progress:: 60%
+   :label: 60%
+</pre>
+</div>
+<div class="section" id="contextual-alternatives">
+<h2>Contextual alternatives</h2>
+<p>Progress bars use some of the same button and alert classes for consistent
+styles.</p>
+<div class="bs-example">
+<div class="progress"><div class="progress-bar progress-bar-success" role="progress-bar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%";></div></div><div class="progress"><div class="progress-bar progress-bar-info" role="progress-bar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%";></div></div><div class="progress"><div class="progress-bar progress-bar-warning" role="progress-bar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%";></div></div><div class="progress"><div class="progress-bar progress-bar-danger" role="progress-bar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%";></div></div></div>
+<pre class="code highlight literal-block">
+.. progress:: 40%
+   :class: success
+
+.. progress:: 20%
+   :class: info
+
+.. progress:: 60%
+   :class: warning
+
+.. progress:: 80%
+   :class: danger
+</pre>
+</div>
+<div class="section" id="striped">
+<h2>Striped</h2>
+<p>Uses a gradient to create a striped effect. Not available in IE8.</p>
+<div class="bs-example">
+<div class="progress progress-striped"><div class="progress-bar progress-bar-success " role="progress-bar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%";></div></div><div class="progress progress-striped"><div class="progress-bar progress-bar-info " role="progress-bar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%";></div></div><div class="progress progress-striped"><div class="progress-bar progress-bar-warning " role="progress-bar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%";></div></div><div class="progress progress-striped"><div class="progress-bar progress-bar-danger " role="progress-bar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%";></div></div></div>
+<pre class="code highlight literal-block">
+.. progress:: 40%
+   :class: success striped
+
+.. progress:: 20%
+   :class: info striped
+
+.. progress:: 60%
+   :class: warning striped
+
+.. progress:: 80%
+   :class: danger striped
+</pre>
+</div>
+<div class="section" id="animated">
+<h2>Animated</h2>
+<p>Add <code>.active</code> to <code>.progress-striped</code> to animate the stripes right to left. Not
+available in IE9 and below.</p>
+<div class="bs-example">
+<div class="progress progress-striped active"><div class="progress-bar " role="progress-bar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%";></div></div></div>
+<pre class="code highlight literal-block">
+.. progress:: 45%
+   :class: active
+</pre>
+</div>
+<div class="section" id="stacked">
+<h2>Stacked</h2>
+<p><span class="text-muted">N/A</span></p>
 </div>
 </div>
 <div class="section" id="wells">
