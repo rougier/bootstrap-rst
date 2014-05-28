@@ -10,6 +10,8 @@ from docutils.parsers.rst import Directive, directives, states, roles
 from docutils.parsers.rst.roles import set_classes
 from docutils.nodes import fully_normalize_name, whitespace_normalize_name
 from docutils.parsers.rst.directives.tables import Table
+from docutils.parsers.rst.roles import set_classes
+from docutils.transforms import misc
 
 
 class button(nodes.Inline, nodes.Element): pass
@@ -251,9 +253,10 @@ class Progress(Directive):
         node['label']     = self.options.get('label', '')
         if self.arguments:
             node['value'] = self.arguments[0].rstrip(' %')
-            if 'label' not in self.options:
-                node['label'] = self.arguments[0]
+            #if 'label' not in self.options:
+            #    node['label'] = self.arguments[0]
         return [node]
+
 
 
 class Header(Directive):
@@ -297,9 +300,36 @@ class Footer(Directive):
 
 
 
+# List item class
+# -----------------------------------------------------------------------------
+class ItemClass(Directive):
+
+    """
+    Set a "list-class" attribute on the directive content or the next element.
+    When applied to the next element, a "pending" element is inserted, and a
+    transform does the work later.
+    """
+
+    required_arguments = 1
+    optional_arguments = 0
+    final_argument_whitespace = True
+    has_content = False
+
+    def run(self):
+        try:
+            class_value = directives.class_option(self.arguments[0])
+        except ValueError:
+            raise self.error(
+                'Invalid class attribute value for "%s" directive: "%s".'
+                % (self.name, self.arguments[0]))
+
+        parent = self.state.parent
+        if isinstance(parent,nodes.list_item):
+            parent['classes'].extend(class_value)
+        return []
 
 
-# Patch list able such that row inherit from the class attribute
+# PATCH: Make a row inherit from the class attribute
 # --------------------------------------------------------------
 class ListTable(Table):
 
@@ -414,8 +444,7 @@ class ListTable(Table):
 
 
 
-
-
+directives.register_directive('item-class', ItemClass)
 directives.register_directive('list-table', ListTable)
 directives.register_directive('thumbnail', Thumbnail)
 directives.register_directive('caption', Caption)

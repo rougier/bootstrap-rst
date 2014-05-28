@@ -54,6 +54,7 @@
 
 .. include:: components-glyphicons.txt
 .. include:: components-breadcrumbs.txt
+.. include:: components-pagination.txt
 .. include:: components-labels.txt
 .. include:: components-badges.txt
 .. include:: components-jumbotron.txt
