@@ -56,6 +56,8 @@
 .. include:: components-breadcrumbs.txt
 .. include:: components-labels.txt
 .. include:: components-badges.txt
+.. include:: components-jumbotron.txt
+.. include:: components-page-header.txt
 .. include:: components-thumbnails.txt
 .. include:: components-alerts.txt
 .. include:: components-progress.txt

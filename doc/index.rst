@@ -94,6 +94,7 @@ extensible classes, and an advanced grid system.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `grids <CSS.html#grid-system>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -103,6 +104,7 @@ extensible classes, and an advanced grid system.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `typography <CSS.html#typography>`_
 
    .. -------------------------------------------------------------------------
@@ -113,6 +115,7 @@ extensible classes, and an advanced grid system.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `code <CSS.html#code>`_
 
    .. -------------------------------------------------------------------------
@@ -123,6 +126,7 @@ extensible classes, and an advanced grid system.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
 
       See `tables <CSS.html#tables>`_
    .. -------------------------------------------------------------------------
@@ -144,6 +148,7 @@ extensible classes, and an advanced grid system.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `buttons <CSS.html#buttons>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -153,6 +158,7 @@ extensible classes, and an advanced grid system.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `images <CSS.html#images>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -162,6 +168,7 @@ extensible classes, and an advanced grid system.
 
       .. progress:: 50%
          :class: warning
+         :label: WIP
 
       See `helper classes <CSS.html#helper-classes>`_
    .. -------------------------------------------------------------------------
@@ -185,6 +192,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `glyphicons <components.html#glyphicons>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -194,6 +202,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `dropdowns <components.html#dropdowns>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -203,6 +212,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `button groups <components.html#button-groups>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -212,6 +222,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `button dropdowns <components.html#button-dropdowns>`_
    .. -------------------------------------------------------------------------
 
@@ -232,6 +243,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 25%
          :class: danger
+         :label: WIP
       See `navs <components.html#navs>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -241,6 +253,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 25%
          :class: danger
+         :label: WIP
       See `navbar <components.html#navbar>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -250,6 +263,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `breadcrumbs <components.html#breadcrumbs>`_
    .. -------------------------------------------------------------------------
 
@@ -264,6 +278,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 25%
          :class: danger
+         :label: WIP
       See `pagination <components.html#pagination>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -273,6 +288,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `labels <components.html#labels>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -282,6 +298,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `badges <components.html#badges>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -289,8 +306,9 @@ groups, navigation, alerts, and much more.
 
       :h4:`Jumbotron`
 
-      .. progress:: 25%
-         :class: danger
+      .. progress:: 100%
+         :class: success
+         :label: Done !
       See `jumbotron <components.html#jumbotron>`_
    .. -------------------------------------------------------------------------
 
@@ -303,8 +321,9 @@ groups, navigation, alerts, and much more.
 
       :h4:`Page header`
 
-      .. progress:: 25%
-         :class: danger
+      .. progress:: 100%
+         :class: success
+         :label: Done !
       See `page header <components.html#page-header>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -314,6 +333,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `thumbnails <components.html#thumbnails>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -323,6 +343,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `alerts <components.html#alerts>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -332,6 +353,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `progress bars <components.html#progress-bars>`_
    .. -------------------------------------------------------------------------
 
@@ -346,6 +368,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 25%
          :class: danger
+         :label: WIP
       See `media object <components.html#media-object>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -355,6 +378,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 25%
          :class: danger
+         :label: WIP
       See `list group <components.html#list-group>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -364,6 +388,7 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 25%
          :class: danger
+         :label: WIP
       See `panels <components.html#panels>`_
    .. -------------------------------------------------------------------------
    .. column::
@@ -373,5 +398,6 @@ groups, navigation, alerts, and much more.
 
       .. progress:: 100%
          :class: success
+         :label: Done !
       See `wells <components.html#wells>`_
    .. -------------------------------------------------------------------------

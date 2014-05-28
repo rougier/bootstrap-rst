@@ -46,28 +46,30 @@ dropdowns, input groups, navigation, alerts, and much more.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#badges" id="id12">Badges</a></li>
-<li><a class="reference internal" href="#thumbnails" id="id13">Thumbnails</a><ul>
-<li><a class="reference internal" href="#default-example" id="id14">Default example</a></li>
-<li><a class="reference internal" href="#custom-content" id="id15">Custom content</a></li>
+<li><a class="reference internal" href="#jumbotron" id="id13">Jumbotron</a></li>
+<li><a class="reference internal" href="#page-header" id="id14">Page header</a></li>
+<li><a class="reference internal" href="#thumbnails" id="id15">Thumbnails</a><ul>
+<li><a class="reference internal" href="#default-example" id="id16">Default example</a></li>
+<li><a class="reference internal" href="#custom-content" id="id17">Custom content</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#alerts" id="id16">Alerts</a><ul>
-<li><a class="reference internal" href="#id4" id="id17">Examples</a></li>
-<li><a class="reference internal" href="#dismissable-alerts" id="id18">Dismissable alerts</a></li>
+<li><a class="reference internal" href="#alerts" id="id18">Alerts</a><ul>
+<li><a class="reference internal" href="#id4" id="id19">Examples</a></li>
+<li><a class="reference internal" href="#dismissable-alerts" id="id20">Dismissable alerts</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#progress-bars" id="id19">Progress bars</a><ul>
-<li><a class="reference internal" href="#basic-example" id="id20">Basic example</a></li>
-<li><a class="reference internal" href="#with-label" id="id21">With label</a></li>
-<li><a class="reference internal" href="#contextual-alternatives" id="id22">Contextual alternatives</a></li>
-<li><a class="reference internal" href="#striped" id="id23">Striped</a></li>
-<li><a class="reference internal" href="#animated" id="id24">Animated</a></li>
-<li><a class="reference internal" href="#stacked" id="id25">Stacked</a></li>
+<li><a class="reference internal" href="#progress-bars" id="id21">Progress bars</a><ul>
+<li><a class="reference internal" href="#basic-example" id="id22">Basic example</a></li>
+<li><a class="reference internal" href="#with-label" id="id23">With label</a></li>
+<li><a class="reference internal" href="#contextual-alternatives" id="id24">Contextual alternatives</a></li>
+<li><a class="reference internal" href="#striped" id="id25">Striped</a></li>
+<li><a class="reference internal" href="#animated" id="id26">Animated</a></li>
+<li><a class="reference internal" href="#stacked" id="id27">Stacked</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#wells" id="id26">Wells</a><ul>
-<li><a class="reference internal" href="#default-well" id="id27">Default well</a></li>
-<li><a class="reference internal" href="#optional-classes" id="id28">Optional classes</a></li>
+<li><a class="reference internal" href="#wells" id="id28">Wells</a><ul>
+<li><a class="reference internal" href="#default-well" id="id29">Default well</a></li>
+<li><a class="reference internal" href="#optional-classes" id="id30">Optional classes</a></li>
 </ul>
 </li>
 </ul>
@@ -417,6 +419,57 @@ to links, Bootstrap navs, and more.</div>
 <p>Self collapsing</p>
 <p>When there are no new or unread items, badges will simply collapse (via CSS's
 <code>:empty</code> selector) provided no content exists within.</p>
+</div>
+<div class="section" id="jumbotron">
+<h1>Jumbotron</h1>
+<p>A lightweight, flexible component that can optionally extend the entire
+viewport to showcase key content on your site.</p>
+<div class="bs-example">
+<div class="jumbotron">
+<p><h1>Hello, world!</h1></p>
+<p>This is a simple hero unit, a simple jumbotron-style component for
+calling extra attention to featured content or information.</p>
+<button class="btn btn-primary btn-lg "  type="button">Learn more</button>
+</div>
+</div>
+<pre class="code highlight literal-block">
+.. jumbotron::
+
+   :h1:`Hello, world!`
+
+   This is a simple hero unit, a simple jumbotron-style component for
+   calling extra attention to featured content or information.
+
+   .. button:: Learn more
+      :class: primary large
+</pre>
+<p>To make the jumbotron full width, and without rounded corners, place it outside
+all .containers and instead add a .container within.</p>
+<pre class="code highlight literal-block">
+.. jumbotron::
+
+   .. container::
+
+      ...
+</pre>
+</div>
+<div class="section" id="page-header">
+<h1>Page header</h1>
+<p>A simple shell for an <code>h1</code> to appropriately space out and segment sections of
+content on a page. It can utilize the <code>h1</code>'s default <code>small</code> element, as well as
+most other components (with additional styles).</p>
+<div class="lead">
+Easily highlight new or unread items by adding a &lt;span class=&quot;badge&quot;&gt;
+to links, Bootstrap navs, and more.</div>
+<div class="bs-example">
+<div class="page-header">
+<h1>Example page header <small>Subtext for header</small></h1></div>
+</div>
+<pre class="code highlight literal-block">
+.. page-header::
+
+   :h1:`Example page header &lt;small&gt;Subtext for header&lt;/small&gt;`
+</pre>
 </div>
 <div class="section" id="thumbnails">
 <h1>Thumbnails</h1>

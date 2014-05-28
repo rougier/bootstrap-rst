@@ -102,6 +102,12 @@ class Thumbnail(Container):
 class Caption(Container):
     default_class = ['caption']
 
+class Jumbotron(Container):
+    default_class = ['jumbotron']
+
+class PageHeader(Container):
+    default_class = ['page-header']
+
 
 
 class Lead(Directive):
@@ -245,8 +251,8 @@ class Progress(Directive):
         node['label']     = self.options.get('label', '')
         if self.arguments:
             node['value'] = self.arguments[0].rstrip(' %')
-            #if 'label' not in self.options:
-            #    node['label'] = self.arguments[0]
+            if 'label' not in self.options:
+                node['label'] = self.arguments[0]
         return [node]
 
 
@@ -413,6 +419,8 @@ class ListTable(Table):
 directives.register_directive('list-table', ListTable)
 directives.register_directive('thumbnail', Thumbnail)
 directives.register_directive('caption', Caption)
+directives.register_directive('jumbotron', Jumbotron)
+directives.register_directive('page-header', PageHeader)
 directives.register_directive('lead', Lead)
 directives.register_directive('progress', Progress)
 directives.register_directive('alert', Alert)
