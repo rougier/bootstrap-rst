@@ -2,7 +2,7 @@ Bootstrap RST
 =============
 
 Bootstrap RST offers an easy access to the `bootstrap <http://getbootstrap.com>`_
-framework using the restructured text markup language.
+framework using the `reStructuredText <http://docutils.sourceforge.net/rst.html>`_ markup language.
 Bootstrap RST provides a set of new directives and roles (row, column, button, list, etc.)
 that allow seamless integration of the bootstrap framework.
 Have a look at the source of this page for example and see below for what is available so far.
@@ -12,9 +12,9 @@ See demo at: `http://rougier.github.io/bootstrap-rst/ <http://rougier.github.io/
 Creators
 ========
 
-**Nicolas P. Rougier**
+**Nicolas P. Rougier** :
 
-* `http://www.loria.fr/~rougier <http://www.loria.fr/~rougier>`_
+* `http://www.labri.fr/perso/nrougier/ <http://www.labri.fr/perso/nrougier/>`_
 * `https://github.com/rougier <https://github.com/rougier>`_
 
 Copyright and license
