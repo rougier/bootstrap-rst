@@ -362,7 +362,7 @@ class ListTable(Table):
             header_rows = self.options.get('header-rows', 0)
             stub_columns = self.options.get('stub-columns', 0)
             self.check_table_dimensions(table_data, header_rows, stub_columns)
-        except SystemMessagePropagation, detail:
+        except SystemMessagePropagation as detail:
             return [detail.args[0]]
         #table_node = self.build_table_from_list(table_data, col_widths,
         #                                        header_rows, stub_columns)
