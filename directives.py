@@ -182,25 +182,29 @@ class PageColumn(Directive):
                    'offset': directives.positive_int,
                    'push':   directives.positive_int,
                    'pull':   directives.positive_int,
+                   'size':   lambda x: directives.choice(x, ('xs', 'sm', 'md', 'lg')),
                    'class':  directives.class_option }
     def run(self):
         self.assert_has_content()
         text = '\n'.join(self.content)
         node = nodes.container(text)
         width = self.options.get('width', 1)
-        node['classes'] += ["col-md-%d" % width]
+        size = self.options.get('size', 'md')
+        node['classes'] += ["col-%s-%d" % (size, width)]
 
         offset = self.options.get('offset', 0)
         if offset > 0:
-            node['classes'] += ["col-md-offset-%d" % offset]
+            node['classes'] += ["col-%s-offset-%d" % (size, offset)]
 
         push = self.options.get('push', 0)
         if push > 0:
-            node['classes'] += ["col-md-push-%d" % push]
+            node['classes'] += ["col-%s-push-%d" % (size, push)]
 
         pull = self.options.get('pull', 0)
         if pull > 0:
-            node['classes'] += ["col-md-pull-%d" % pull]
+            node['classes'] += ["col-%s-pull-%d" % (size, pull)]
+
+        node['classes'] += self.options.get('class', [])
 
         self.add_name(node)
         self.state.nested_parse(self.content, self.content_offset, node)
