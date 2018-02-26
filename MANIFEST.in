@@ -1,0 +1,9 @@
+include README
+include LICENSE
+
+global-include *.tmpl *.css
+global-exclude *.pyc __pycache__
+
+recursive-include doc *.rst *.txt
+recursive-include bootstrap *.css *.map *.js glyphicons-halflings-regular.*
+

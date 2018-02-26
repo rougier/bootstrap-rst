@@ -4,7 +4,7 @@
 # Copyright (c) 2014, Nicolas P. Rougier
 # Distributed under the (new) BSD License. See LICENSE.txt for more info.
 # -----------------------------------------------------------------------------
-from docutils import nodes
+from docutils import nodes, utils
 from docutils.parsers.rst.directives.body import BasePseudoSection
 from docutils.parsers.rst import Directive, directives, states, roles
 from docutils.parsers.rst.roles import set_classes
@@ -18,6 +18,7 @@ class button(nodes.Inline, nodes.Element): pass
 class progress(nodes.Inline, nodes.Element): pass
 class alert(nodes.General, nodes.Element): pass
 class callout(nodes.General, nodes.Element): pass
+class carousel(nodes.General, nodes.Element): pass
 
 
 
@@ -74,17 +75,70 @@ class Callout(Directive):
 
 
 class Container(Directive):
+    """Overridden Container.
+
+    You can choose any tag name just like a barebone computer or a wild card.
+    Default tag name is div.
+
+    This is based on the code at docutils.parsers.rst.directives.html.
+
+    Derived classes:
+    default_class = None
+    default_tagname = None
+    default_attributes = None
+
+    Derived class example:
+    class Thumbnail(Container):
+        default_class = ['thumbnail']
+
+    class Html5Header(Container):
+        default_tagname = 'header'
+
+    Restructuredtext example:
+    .. container::
+       :tagname: header
+
+       .. container:: navbar navbar-expand-md navbar-dark fixed-top bg-dark
+          :tagname: nav
+
+          .. container:: navbar-brand
+             :tagname: a
+             :attributes: href=#
+
+             Carousel
+
+          .. container:: navbar-toggler
+             :tagname: button
+             :attributes: type=button
+                          data-toggle=collapse
+                          data-target=#navbarCollapse
+                          aria-controls=navbarCollapse
+                          aria-expanded=false
+                          aria-label="Toggle navigation"
+
+             .. raw:: html
+
+                <span class="navbar-toggler-icon"></span>
+    """
     optional_arguments = 1
     final_argument_whitespace = True
-    option_spec = {'name': directives.unchanged}
+    option_spec = {'name': directives.unchanged,
+                   'tagname': directives.unchanged,
+                   'attributes': directives.unchanged,
+                   'endless': directives.flag}
     has_content = True
     default_class = None
+    default_tagname = None
+    default_attributes = None
+    default_endless = False
 
     def run(self):
-        self.assert_has_content()
+        # self.assert_has_content()
         text = '\n'.join(self.content)
         try:
-            if self.arguments:
+            if self.default_class and self.arguments:
+                classes = self.default_class + self.arguments
+            elif self.arguments:
                 classes = directives.class_option(self.arguments[0])
             else:
                 classes = self.default_class
@@ -93,9 +147,53 @@ class Container(Directive):
                 'Invalid class attribute value for "%s" directive: "%s".'
                 % (self.name, self.arguments[0]))
         node = nodes.container(text)
-        node['classes'].extend(classes)
+        if classes:
+            node['classes'].extend(classes)
+        try:
+            if 'tagname' in self.options:
+            # if self.options.has_key('tagname'):
+                node.tagname = self.options.get('tagname', 'div')
+            elif self.default_tagname:
+                node.tagname = self.default_tagname
+            else:
+                node.tagname = 'div'
+        except ValueError:
+            raise self.error(
+                'Invalid tag name for "%s" directive: "%s".'
+                % (self.name, node.tagname))
+        attrs = None
+        if 'attributes' in self.options:
+            attrs = self.options.get('attributes', '')
+        elif self.default_attributes:
+            attrs = self.default_attributes
+        if attrs:
+            tokens = attrs.split('\n')
+            try:
+                attname, val = utils.extract_name_value(tokens[0])[0]
+                if attname == 'id':
+                    node['ids'].append(val)
+                else:
+                    node.attributes.update({attname: val})
+            except utils.NameValueError:
+                node['name'] = tokens[0]
+            for token in tokens[1:]:
+                try:
+                    attname, val = utils.extract_name_value(token)[0]
+                    if attname == 'id':
+                        node['ids'].append(val)
+                    else:
+                        node.attributes.update({attname: val})
+                except utils.NameValueError as detail:
+                    line = self.state_machine.line
+                    msg = self.state_machine.reporter.error(
+                          'Error parsing %s tag attribute "%s": %s.'
+                          % (node.tagname, token, detail), nodes.literal_block(line, line))
+                    return [msg]
+        if 'endless' in self.options or self.default_endless:
+            node['endless'] = True
         self.add_name(node)
-        self.state.nested_parse(self.content, self.content_offset, node)
+        if self.content:
+            self.state.nested_parse(self.content, self.content_offset, node)
         return [node]
 
 class Thumbnail(Container):
@@ -110,7 +208,18 @@ class Jumbotron(Container):
 class PageHeader(Container):
     default_class = ['page-header']
 
+class CarouselItem(Container):
+    default_class = ['carousel-item']
+    # default_class = ['item']
 
+class CarouselCaption(Container):
+    default_class = ['carousel-caption']
+
+class Html5Header(Container):
+    default_tagname = 'header'
+
+class Html5Footer(Container):
+    default_tagname = 'footer'
 
 class Lead(Directive):
     required_arguments, optional_arguments = 0,0
@@ -446,6 +555,29 @@ class ListTable(Table):
         tgroup += tbody
         return table
 
+class Carousel(Directive):
+    has_content = True
+    required_arguments = 1
+    optional_arguments = 1
+    final_argument_whitespace = True
+    option_spec = {
+        'indicators': directives.positive_int,
+        'control': directives.flag}
+
+    def run(self):
+        self.assert_has_content()
+        text = '\n'.join(self.content)
+        node = carousel(text)
+        node['ids'].append(self.arguments[0])
+        if 'indicators' in self.options:
+            node['data-target'] = self.arguments[0]
+            node['indicators'] = self.options.get('indicators', 0)
+        if 'control' in self.options:
+            node['data-target'] = self.arguments[0]
+            node.control = True
+        self.add_name(node)
+        self.state.nested_parse(self.content, self.content_offset, node)
+        return [node]
 
 
 directives.register_directive('item-class', ItemClass)
@@ -463,3 +595,9 @@ directives.register_directive('column', PageColumn)
 directives.register_directive('button', Button)
 directives.register_directive('footer', Footer)
 directives.register_directive('header', Header)
+directives.register_directive('container', Container)
+directives.register_directive('carousel', Carousel)
+directives.register_directive('carousel-item', CarouselItem)
+directives.register_directive('carousel-caption', CarouselCaption)
+directives.register_directive('html5-header', Html5Header)
+directives.register_directive('html5-footer', Html5Footer)

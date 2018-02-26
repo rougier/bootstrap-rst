@@ -6,6 +6,8 @@
 # Distributed under the (new) BSD License. See LICENSE.txt for more info.
 # -----------------------------------------------------------------------------
 import sys, os, re
+import glob
+import shutil
 from docutils import nodes, utils
 from docutils.parsers.rst.directives import images
 from docutils.transforms import TransformError, Transform, parts
@@ -30,6 +32,12 @@ class HTMLTranslator(html4css1.HTMLTranslator):
     """
     This is a translator class for the docutils system.
     """
+
+    # HTML5
+    doctype = ('<!doctype html>\n')
+
+    head_prefix_template = ('<html lang="%(lang)s">\n<head>\n')
+    content_type = ('<meta charset="%s">\n')
 
     def visit_h1(self, node):
         self.body.append('<h1>%s</h1>' % node.children[0])
@@ -104,7 +112,8 @@ class HTMLTranslator(html4css1.HTMLTranslator):
                         'danger'  : 'btn-danger',  'link'    : 'btn-link',
                         'outline' : 'btn-outline', 'tiny'    : 'btn-xs',
                         'small'   : 'btn-sm',      'large'   : 'btn-lg',
-                        'block'   : 'btn-block',   'active'  : 'btn-active' }
+                        'block'   : 'btn-block',   'active'  : 'btn-active',
+                        'secondary': 'btn-secondary' }
 
         classes = 'btn '
         flag = False
@@ -238,7 +247,21 @@ class HTMLTranslator(html4css1.HTMLTranslator):
 
     # overwritten : removed 'container' class
     def visit_container(self, node):
-        self.body.append(self.starttag(node, 'div', CLASS=''))
+        attrs = node.non_default_attributes().copy()
+        if 'classes' in attrs:
+            del attrs['classes']
+        if 'endless' in attrs:
+            del attrs['endless']
+        self.body.append(self.starttag(node, node.tagname, **attrs))
+
+    # def visit_container(self, node):
+    #     self.body.append(self.starttag(node, 'div', CLASS=''))
+
+    def depart_container(self, node):
+        if 'endless' not in node:
+            self.body.append('</%s>\n' % node.tagname)
+        else:
+            pass
 
     # overwritten: get rid of <hr> tag
     def depart_header(self, node):
@@ -281,13 +304,126 @@ class HTMLTranslator(html4css1.HTMLTranslator):
                               + self.body_suffix[:-1])
         assert not self.context, 'len(context) = %s' % len(self.context)
 
+    def visit_carousel(self, node):
+        attrs = {
+            'class': 'carousel slide',
+            'data-ride': 'carousel',
+            }
+        self.body.append(self.starttag(node, 'div', **attrs))
+        ids = node['ids']
+        if 'indicators' in node:
+            ids = node['data-target']
+            indicators = node['indicators']
+            self.body.append('<ol class="carousel-indicators">\n')
+            for i in range(indicators):
+                if i == 0:
+                    active = ' class="active"'
+                else:
+                    active = ''
+                self.body.append('<li data-target="#%s" data-slide-to="%s"%s></li>\n' % (ids, i, active))
+            self.body.append('</ol>\n')
+        self.body.append('<div class="carousel-inner">\n')
+        # self.body.append('<div class="carousel-inner" role="listbox">\n')
+
+    def depart_carousel(self, node):
+        # self.body.append('</div>\n</div>\n')
+        self.body.append('</div>\n')
+        # if 'control' in node:
+        if node.control:
+            ids = node['data-target']
+            del node['ids']
+            attrs = {
+                'class': 'carousel-control-prev',
+                'href': '#%s' % ids,
+                # 'href': ids,
+                'role': 'button',
+                'data-slide': 'prev'}
+            self.body.append(self.starttag(node, 'a', **attrs))
+            attrs = {
+                'class': 'carousel-control-prev-icon',
+                'aria-hidden': 'true'}
+            self.body.append(self.starttag(node, 'span', **attrs))
+            self.body.append('</span>\n')
+            self.body.append('<span class="sr-only">Previous</span>\n')
+            self.body.append('</a>\n')
+            attrs = {
+                'class': 'carousel-control-next',
+                # 'href': ids,
+                'href': '#%s' % ids,
+                'role': 'button',
+                'data-slide': 'next'}
+            self.body.append(self.starttag(node, 'a', **attrs))
+            attrs = {
+                'class': 'carousel-control-next-icon',
+                'aria-hidden': 'true'}
+            self.body.append(self.starttag(node, 'span', **attrs))
+            self.body.append('</span>\n')
+            self.body.append('<span class="sr-only">Next</span>\n')
+            self.body.append('</a>\n')
+        self.body.append('</div>\n')
 
 
 
 # -----------------------------------------------------------------------------
 from docutils.core import publish_cmdline, publish_parts, default_description
-description = ('Generates (X)HTML bootstrap-ready documents from standalone reStructuredText '
-               'sources.  ' + default_description)
-publish_cmdline(writer=HTMLWriter(),
-                writer_name='bootstrap',
-                description=description)
+
+def copy_assets():
+    source_dirname = os.path.abspath(os.path.dirname(__file__))
+    dest_dirname = os.path.abspath(os.path.dirname(sys.argv[-1]))
+    CSS_FILES = glob.glob(os.path.join(source_dirname, '*.css'))
+    script_name = os.path.basename(sys.argv[0])
+    for i in CSS_FILES:
+        source = i
+        dest = os.path.join(dest_dirname, os.path.basename(i))
+        if not os.path.isfile(dest):
+            shutil.copy(source, dest)
+    if script_name == 'rst2bootstrap-carousel' or script_name == 'rst2bootstrap3':
+        source = os.path.join(source_dirname, 'bootstrap')
+        dest = os.path.join(dest_dirname, 'bootstrap')
+        if not os.path.isdir(dest):
+            shutil.copytree(source, dest)
+
+def main():
+    description = ('Generates (X)HTML bootstrap-ready documents from standalone reStructuredText '
+                       'sources.  ' + default_description)
+    publish_cmdline(writer=HTMLWriter(),
+                    writer_name='bootstrap',
+                    settings_overrides = {
+                        'stylesheet_path' : 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'},
+                    description=description)
+
+def traditional_main():
+    copy_assets()
+    script_name = os.path.basename(sys.argv[0])
+    source_dirname = os.path.abspath(os.path.dirname(__file__))
+    if script_name == 'rst2bootstrap3':
+        template = os.path.join(source_dirname, 'page.tmpl')
+        # stylesheet_path = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css, https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
+        stylesheet_path = 'bootstrap/css/bootstrap.min.css, https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
+    elif script_name == 'rst2bootstrap-carousel':
+        template = os.path.join(source_dirname, 'page-carousel.tmpl')
+        stylesheet_path = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css, bootstrap/css/carousel.css'
+    else:
+        template = os.path.join(source_dirname, 'page.tmpl')
+        stylesheet_path = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
+    description = ('Generates (X)HTML bootstrap-ready documents from standalone reStructuredText '
+                       'sources.  ' + default_description)
+    publish_cmdline(writer=HTMLWriter(),
+                    writer_name='rst2bootstrap',
+                    settings_overrides = {
+                        'strip_comments' : True,
+                        'report_level' : 3,
+                        'doctitle_xform' : False,
+                        'traceback' : True,
+                        'compact_lists' : True,
+                        'toc_backlinks' : False,
+                        'syntax_highlight' : 'short',
+                        'template' : template,
+                        'cloak_email_addresses' : True,
+                        'stylesheet_path' : stylesheet_path,
+                        'embed_stylesheet' : False,
+                        'xml_declaration' : False},
+                    description=description)
+
+if __name__ == '__main__':
+    main()
