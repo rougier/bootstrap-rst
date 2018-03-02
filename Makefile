@@ -13,12 +13,12 @@ RST2HTML         = ./bootstrap.py
 # https://getbootstrap.com/docs/4.0/extend/icons/
 
 STYLESHEET='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
-components.html: STYLESHEET='bootstrap/css/bootstrap.min.css,\
-			     https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
+# components.html: STYLESHEET='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+components.html: STYLESHEET='bootstrap/css/bootstrap.min.css'
 carousel.html: STYLESHEET='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css,\
 			   bootstrap/css/carousel.css'
-getting-started.html: STYLESHEET='bootstrap/css/bootstrap.min.css,\
-				  https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
+# getting-started.html: STYLESHEET='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+getting-started.html: STYLESHEET='bootstrap/css/bootstrap.min.css'
 TEMPLATE=page.tmpl
 carousel.html: TEMPLATE=page-carousel.tmpl
 
