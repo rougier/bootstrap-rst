@@ -377,7 +377,8 @@ def copy_assets():
         dest = os.path.join(dest_dirname, os.path.basename(i))
         if not os.path.isfile(dest):
             shutil.copy(source, dest)
-    if script_name == 'rst2bootstrap-carousel' or script_name == 'rst2bootstrap3':
+    # if script_name == 'rst2bootstrap-carousel' or script_name == 'rst2bootstrap3':
+    if script_name == 'rst2bootstrap-carousel':
         source = os.path.join(source_dirname, 'bootstrap')
         dest = os.path.join(dest_dirname, 'bootstrap')
         if not os.path.isdir(dest):
@@ -398,8 +399,8 @@ def traditional_main():
     source_dirname = os.path.abspath(os.path.dirname(__file__))
     if script_name == 'rst2bootstrap3':
         template = os.path.join(source_dirname, 'page.tmpl')
-        # stylesheet_path = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css, https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
-        stylesheet_path = 'bootstrap/css/bootstrap.min.css, https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
+        stylesheet_path = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+        # stylesheet_path = 'bootstrap/css/bootstrap.min.css'
     elif script_name == 'rst2bootstrap-carousel':
         template = os.path.join(source_dirname, 'page-carousel.tmpl')
         stylesheet_path = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css, bootstrap/css/carousel.css'
